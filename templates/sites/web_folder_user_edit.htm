@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="web_folder_id" class="control-label">{tmpl_var name='web_folder_id_txt'}</label>
+            <select name="web_folder_id" id="web_folder_id" class="form-control">
+                {tmpl_var name='web_folder_id'}
+            </select>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="username" class="control-label">{tmpl_var name='username_txt'}</label>
+            <input type="text" name="username" id="username" value="{tmpl_var name='username'}" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="password" class="col-form-label">{tmpl_var name='password_txt'}</label>
+            <div class="input-group">
+                <input type="password" name="password" id="password" value="{tmpl_var name='password'}" class="form-control" autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</button>
+                </span>
+            </div>
+            <div>
+                <label class="control-label">{tmpl_var name='password_strength_txt'}</label>
+                <div class="checkbox">
+                    <div id="passBar"></div>
+                    <span id="passText">&nbsp;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="repeat_password" class="col-form-label">{tmpl_var name='repeat_password_txt'}</label>
+            <input type="password" name="repeat_password" id="repeat_password" value="" class="form-control" autocomplete="off" onkeyup="checkPassMatch('password','repeat_password');" />
+        </div>
+        <div>
+            <div id="confirmpasswordError" style="display:none;" class="confirmpassworderror">{tmpl_var name='password_mismatch_txt'}</div>
+            <div id="confirmpasswordOK" style="display:none;" class="confirmpasswordok">{tmpl_var name='password_match_txt'}</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-check custom">
+            {tmpl_var name='active'}
+            <label class="form-check-label">
+                {tmpl_var name='active_txt'}
+            </label>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/web_folder_user_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/web_folder_user_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

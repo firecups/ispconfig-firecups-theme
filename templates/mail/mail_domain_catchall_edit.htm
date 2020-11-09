@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-5">
+        <label for="email_local_part">{tmpl_var name='source_txt'}</label>
+        <div class="input-group">
+            <div class="input-group-append">
+                <span class="input-group-text">*@</span>
+            </div>
+            <select name="email_domain" id="email_domain" class="form-control" aria-describedby="domain-desc">{tmpl_var name='email_domain'}</select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <label for="destination" class="control-label">{tmpl_var name='destination_txt'}</label>
+        <input type="text" name="destination" id="destination" value="{tmpl_var name='destination'}" class="form-control" />
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-check custom">
+            {tmpl_var name='greylisting'}
+            <label class="form-check-label">
+                {tmpl_var name='greylisting_txt'}
+            </label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-check custom">
+            {tmpl_var name='active'}
+            <label class="form-check-label">
+                {tmpl_var name='active_txt'}
+            </label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <input type="hidden" name="type" value="catchall">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/mail_domain_catchall_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/mail_domain_catchall_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

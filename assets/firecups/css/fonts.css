@@ -1,0 +1,115 @@
+@font-face {
+	font-family: 'ispconfig';
+	src: url('../fonts/ispconfig/ispconfig.eot?-drlkxz');
+	src: url('../fonts/ispconfig/ispconfig.eot?#iefix-drlkxz') format('embedded-opentype'),
+		url('../fonts/ispconfig/ispconfig.woff?-drlkxz') format('woff'),
+		url('../fonts/ispconfig/ispconfig.ttf?-drlkxz') format('truetype'),
+		url('../fonts/ispconfig/ispconfig.svg?-drlkxz#ispconfig') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.iconisp {
+	font-family: 'ispconfig';
+	speak: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	padding-right: 1px;
+}
+
+.iconisp:before {
+	vertical-align: middle;
+}
+
+.iconisp-calendar:before {
+	content: "\e60e";
+}
+
+.iconisp-billing:before {
+	content: "\e60d";
+}
+
+.iconisp-lens:before {
+	content: "\e60b";
+}
+
+.iconisp-bulb:before {
+	content: "\e60c";
+}
+
+.iconisp-vm2:before {
+	content: "\e600";
+}
+
+.iconisp-vm:before {
+	content: "\e601";
+}
+
+.iconisp-tools:before {
+	content: "\e602";
+}
+
+.iconisp-admin:before {
+	content: "\e603";
+}
+
+.iconisp-sites:before {
+	content: "\e604";
+}
+
+.iconisp-monitor:before {
+	content: "\e605";
+}
+
+.iconisp-dashboard:before {
+	content: "\e606";
+}
+
+.iconisp-help:before {
+	content: "\e607";
+}
+
+.iconisp-mail:before,
+.iconisp-mailuser:before {
+	content: "\e608";
+}
+
+.iconisp-dns:before {
+	content: "\e609";
+}
+
+.iconisp-client:before {
+	content: "\e60a";
+}
+
+.iconisp-edit:before {
+	content: "\e615";
+}
+
+.iconisp-filter:before {
+	content: "\e614";
+}
+
+.iconisp-link:before {
+	content: "\e60f";
+}
+
+.iconisp-action:before {
+	content: "\e610";
+}
+
+.iconisp-dbadmin:before {
+	content: "\e612";
+}
+
+.iconisp-loginas:before {
+	content: "\e611";
+}
+
+.iconisp-delete:before {
+	content: "\e613";
+}

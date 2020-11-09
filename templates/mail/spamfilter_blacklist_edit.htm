@@ -1,0 +1,62 @@
+<!--
+                  <div class="form-group">
+                    <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+                    <div class="col-sm-9"><select name="server_id" id="server_id" class="form-control">
+                                                    {tmpl_var name='server_id'}
+                                            </select></div>
+                  </div>
+            -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="rid" class="control-label">{tmpl_var name='rid_txt'}</label>
+            <select name="rid" id="rid" class="form-control">
+                {tmpl_var name='rid'}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label class="control-label">&nbsp;</label>
+            <button class="btn btn-primary form-control" data-load-content="mail/spamfilter_users_edit.php">{tmpl_var name='add_new_record_txt'}</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="email" class="control-label">{tmpl_var name='email_txt'}</label>
+            <input type="text" name="email" id="email" value="{tmpl_var name='email'}" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="priority" class="control-label">{tmpl_var name='priority_txt'}</label>
+            <select name="priority" id="priority" class="form-control">
+                {tmpl_var name='priority'}
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-check custom">
+            {tmpl_var name='active'}
+            <label class="form-check-label">
+                {tmpl_var name='active_txt'}
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <input type="hidden" name="wb" value="{tmpl_var name='wb'}">
+
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/spamfilter_blacklist_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/spamfilter_blacklist_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

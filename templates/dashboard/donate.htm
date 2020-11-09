@@ -1,0 +1,19 @@
+
+<div class="callout callout-success">
+	<div class="float-right">
+		<a href="#" class="btn btn-warning" data-load-content="dashboard/dashboard.php?hide=donate">{tmpl_var name='hide_btn_txt'}</a>
+		<a href="https://www.ispconfig.org/donation/" target="_blank" class="btn btn-success">{tmpl_var name='donate_btn_txt'}</a>
+	</div>
+	<h5>{tmpl_var name='donate_txt'}<button type="button" class="btn btn-link btn-xs">{tmpl_var name='more_btn_txt'}</button></h5>
+	<p>{tmpl_var name='donate2_txt'}</p>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#description").toggle();
+	$("button").click(function(){
+        $("#description").toggle();
+    });
+});
+</script>
+	

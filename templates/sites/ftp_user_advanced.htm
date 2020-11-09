@@ -1,0 +1,87 @@
+<div class="row">
+
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="uid" class="control-label">{tmpl_var name='uid_txt'}</label>
+            <input type="text" name="uid" id="uid" value="{tmpl_var name='uid'}" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="gid" class="control-label">{tmpl_var name='gid_txt'}</label>
+            <input type="text" name="gid" id="gid" value="{tmpl_var name='gid'}" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="dir" class="control-label">{tmpl_var name='dir_txt'}</label>
+            <input type="text" name="dir" id="dir" value="{tmpl_var name='dir'}" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <label for="quota_files">{tmpl_var name='quota_files_txt'}</label>
+        <div class="input-group mb-2">
+            <input type="text" name="quota_files" id="quota_files" value="{tmpl_var name='quota_files'}" class="form-control" />
+            <div class="input-group-append">
+                <div class="input-group-text">{tmpl_var name='quota_files_unity_txt'}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <div class="form-group">
+            <label for="ul_ratio" class="control-label">{tmpl_var name='ul_ratio_txt'}</label>
+            <input type="text" name="ul_ratio" id="ul_ratio" value="{tmpl_var name='ul_ratio'}" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="form-group">
+            <label for="dl_ratio" class="control-label">{tmpl_var name='dl_ratio_txt'}</label>
+            <input type="text" name="dl_ratio" id="dl_ratio" value="{tmpl_var name='dl_ratio'}" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+
+        <label for="ul_bandwidth">{tmpl_var name='ul_bandwidth_txt'}</label>
+        <div class="input-group mb-2">
+            <input type="text" name="ul_bandwidth" id="ul_bandwidth" value="{tmpl_var name='ul_bandwidth'}" class="form-control" />
+            <div class="input-group-append">
+                <div class="input-group-text">kb/s</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+        <label for="dl_bandwidth">{tmpl_var name='dl_bandwidth_txt'}</label>
+        <div class="input-group mb-2">
+            <input type="text" name="dl_bandwidth" id="dl_bandwidth" value="{tmpl_var name='dl_bandwidth'}" class="form-control" />
+            <div class="input-group-append">
+                <div class="input-group-text">kb/s</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="expires" class="control-label">{tmpl_var name='expires_txt'}</label>
+            {tmpl_var name='expires'}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/ftp_user_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/ftp_user_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

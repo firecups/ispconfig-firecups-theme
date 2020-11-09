@@ -1,0 +1,15 @@
+<div class="card sidebar">
+    <div class="card-body text-left">
+        <div class="list-group list-group-flush">
+            <header class="list-group-item list-group-item-action"><b>{tmpl_var name='latest_news_txt'}</b></header>
+            <ul>
+                <tmpl_loop name="news">
+                    <li style="padding: 0.3rem;">
+                        <a href="{tmpl_var name=" link"}" target="_blank" style="margin-top:8px;padding-bottom:5px;"><b>{tmpl_var name="date"}</b><br />
+                            {tmpl_var name="title"}</a>
+                    </li>
+                </tmpl_loop>
+            </ul>
+        </div>
+    </div>
+</div>

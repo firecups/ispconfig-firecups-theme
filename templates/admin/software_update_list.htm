@@ -1,0 +1,54 @@
+<div class='page-header'>
+	<h1 class="page-title"><tmpl_var name="list_head_txt"></h1>
+</div>
+
+<div class="row row-cards row-deck">
+    
+    <div class="card">
+   
+        <div class="row" style="padding-bottom: 10px">
+            <div class="col-sm-1" style="padding-top: 8px;"><label for="server_id">{tmpl_var name='server_select_txt'}</label></div>
+            <div class="col-sm-2"><select name="server_id" id="server_id" class="form-control" onChange="ISPConfig.submitForm('pageForm','admin/software_update_list.php');">
+                <tmpl_loop name="servers">
+                    <option value="{tmpl_var name='server_id'}" {tmpl_var name='selected'}>{tmpl_var name='server_name'}</option>
+                </tmpl_loop>
+                </select>
+            </div>
+            <div class="col-sm-9"></div>
+        </div>
+  
+    
+        <div class="table-responsive">
+            <table class="table card-table table-vcenter table-hover">
+                <thead class="thead-dark form-group-sm">
+                    <tr>
+                        <th data-column="installed"><tmpl_var name="installed_txt"></th>
+                        <th data-column="update_title"><tmpl_var name="update_title_txt"></th>
+                        <th data-column="version"><tmpl_var name="version_txt"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tmpl_loop name="records">
+                        <tr>
+                            <td>{tmpl_var name="installed"}</td>
+                            <td>{tmpl_var name="update_title"}</td>
+                            <td>{tmpl_var name="version"}</td>
+                        </tr>
+                    </tmpl_loop>
+                    <tmpl_unless name="records">
+                        <tr class="tbl_row_noresults tbl_row_<tmpl_if name='__EVEN__'}even<tmpl_else>uneven</tmpl_if>">
+                            <td colspan="3">{tmpl_var name='no_updates_txt'}</td>
+                        </tr>
+                    </tmpl_unless>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+        
+    

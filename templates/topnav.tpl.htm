@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+    <tmpl_loop name="nav_top">
+    <li class="nav-item">
+        <a href="#" class="nav-link <tmpl_if name="active">active</tmpl_if>" data-capp="<tmpl_var name='module'>">
+            <span class="iconisp iconisp-<tmpl_var name='module'> d-inline"></span> <tmpl_var name="title">
+        </a>
+    </li>
+    </tmpl_loop>
+</ul>

@@ -1,0 +1,13 @@
+#sidebar .select2-container,
+#sidebar .select2-container:focus {
+    padding-left: 2rem;
+}
+
+.select2-container:hover,
+.select2-container:focus,
+.select2-search__field:hover,
+.select2-search__field:focus,
+.select2-selection__rendered:hover,
+.select2-selection__rendered:hover {
+    outline: 0;
+}

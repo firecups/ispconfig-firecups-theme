@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="puser" class="control-label">{tmpl_var name='puser_txt'}</label>
+			<input type="text" name="puser" id="puser" value="{tmpl_var name='puser'}" class="form-control" />
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="pgroup" class="control-label">{tmpl_var name='pgroup_txt'}</label>
+			<input type="text" name="pgroup" id="pgroup" value="{tmpl_var name='pgroup'}" class="form-control" />
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-1">
+		<div class="form-group">
+			<label for="shell" class="control-label">{tmpl_var name='shell_txt'}</label>
+			<input type="text" name="shell" id="shell" value="{tmpl_var name='shell'}" class="form-control" />
+		</div>
+	</div>
+	<tmpl_if name="is_jailkit">
+		<input type="hidden" name="dir" id="dir" value="{tmpl_var name='dir'}">
+		</tmpl_else>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label for="dir" class="control-label">{tmpl_var name='dir_txt'}</label>
+				<input type="text" name="dir" id="dir" value="{tmpl_var name='dir'}" class="form-control" />
+			</div>
+		</div>
+	</tmpl_if>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<input type="hidden" name="id" value="{tmpl_var name='id'}">
+		<div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+			<button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/shell_user_edit.php">{tmpl_var name='btn_save_txt'}</button>
+			<button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/shell_user_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+		</div>
+	</div>
+</div>

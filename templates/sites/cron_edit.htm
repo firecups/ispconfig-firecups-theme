@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <tmpl_if name="edit_disabled">
+                        <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
+                        <select name="parent_domain_id" id="parent_domain_id" class="form-control" disabled="disabled">
+                            {tmpl_var name='parent_domain_id'}
+                        </select>
+                        <input type="hidden" name="parent_domain_id" value="{tmpl_var name='parent_domain_id_value'}" />
+                        <tmpl_else>
+                            <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
+                            <select name="parent_domain_id" id="parent_domain_id" class="form-control">
+                                {tmpl_var name='parent_domain_id'}
+                            </select>
+                    </tmpl_if>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="run_min" class="control-label">{tmpl_var name='run_min_txt'}</label>
+                    <input type="text" name="run_min" id="run_min" value="{tmpl_var name='run_min'}" class="form-control" />
+                    <p class="formHint">e.g. *, */3, 10-20</p>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="run_hour" class="control-label">{tmpl_var name='run_hour_txt'}</label>
+                    <input type="text" name="run_hour" id="run_hour" value="{tmpl_var name='run_hour'}" class="form-control" />
+                    <p class="formHint">e.g. *, */2, 0, 10-12</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="run_mday" class="control-label">{tmpl_var name='run_mday_txt'}</label>
+                    <input type="text" name="run_mday" id="run_mday" value="{tmpl_var name='run_mday'}" class="form-control" />
+                    <p class="formHint">e.g. *, */4, 1-5</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="run_month" class="control-label">{tmpl_var name='run_month_txt'}</label>
+                    <input type="text" name="run_month" id="run_month" value="{tmpl_var name='run_month'}" class="form-control" />
+                    <p class="formHint">e.g. *, 1-6</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="run_wday" class="control-label">{tmpl_var name='run_wday_txt'}</label>
+                    <input type="text" name="run_wday" id="run_wday" value="{tmpl_var name='run_wday'}" class="form-control" />
+                    <p class="formHint">e.g. *, 0, 1-5</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label for="command" class="control-label">{tmpl_var name='command_txt'}</label>
+                    <input type="text" name="command" id="command" value="{tmpl_var name='command'}" class="form-control" />
+                    <p class="formHint">{tmpl_var name='command_hint_txt'}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-check custom">
+                    {tmpl_var name='log'}
+                    <label class="form-check-label">
+                        {tmpl_var name='log_output_txt'}
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-check custom">
+                    {tmpl_var name='active'}
+                    <label class="form-check-label">
+                        {tmpl_var name='active_txt'}
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                <input type="hidden" name="id" value="{tmpl_var name='id'}">
+                <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+                    <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/cron_edit.php">{tmpl_var name='btn_save_txt'}</button>
+                    <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/cron_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

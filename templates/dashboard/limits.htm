@@ -1,0 +1,26 @@
+<div class="row row-cards row-deck">
+	<div class="card">
+		<div class="card-header">
+			<h3 class="card-title">{tmpl_var name='limits_txt'}</h3>
+		</div>
+		<div class="table-responsive">
+			<table class="table card-table table-vcenter table-hover">
+				<tbody>
+					<tmpl_loop name='rows'>
+						<tr>
+							<td>{tmpl_var name='field_txt'}Potato</td>
+							<td>{tmpl_var name='usage'} {tmpl_var name='of_txt'} {tmpl_var name='value'}</td>
+							<td style="width:25%">
+								<div class='progress progress-xs'>
+									<div class='progress-bar bg-{tmpl_if name="percentage" op="<" value="50"}success{tmpl_elseif name="percentage" op="<" value="75"}warning{tmpl_else}danger{/tmpl_if}' role='progressbar' aria-valuemin='0' aria-valuemax='100' aria-valuenow='{tmpl_var name="percentage"}' style='width:{tmpl_var name="percentage"}%' data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='percentage'}%">
+										<span class='sr-only'>{tmpl_var name='usage'} {tmpl_var name='of_txt'} {tmpl_var name='value'}</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tmpl_loop>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label class="control-label">{tmpl_var name='move_junk_txt'}</label>
+			<select name="move_junk" id="move_junk" class="form-control">
+				{tmpl_var name='move_junk'}
+			</select>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="purge_trash_days" class="control-label">{tmpl_var name='purge_trash_days_txt'}</label>
+			<div class="input-group">
+				<tmpl_if name="show_config_info">
+					<input type="text" name="purge_trash_days" id="purge_trash_days" value="{tmpl_var name='purge_trash_days'}" class="form-control" data-toggle="tooltip" title="{tmpl_var name='tooltip_purge_trash_days_txt'}">
+					<tmpl_else>
+						<input type="text" name="purge_trash_days" id="purge_trash_days" value="{tmpl_var name='purge_trash_days'}" class="form-control">
+				</tmpl_if>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="purge_junk_days" class="control-label">{tmpl_var name='purge_junk_days_txt'}</label>
+			<div class="input-group">
+				<tmpl_if name="show_config_info">
+					<input type="text" name="purge_junk_days" id="purge_junk_days" value="{tmpl_var name='purge_junk_days'}" class="form-control" data-toggle="tooltip" title="{tmpl_var name='tooltip_purge_junk_days_txt'}">
+					<tmpl_else>
+						<input type="text" name="purge_junk_days" id="purge_junk_days" value="{tmpl_var name='purge_junk_days'}" class="form-control">
+				</tmpl_if>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-9">
+		{tmpl_var name='filter_records'}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-9">
+		<input type="hidden" name="id" value="{tmpl_var name='id'}">
+		<div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+			<button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/mail_user_edit.php">{tmpl_var name='btn_save_txt'}</button>
+			<button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/mail_user_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+		</div>
+	</div>
+</div>

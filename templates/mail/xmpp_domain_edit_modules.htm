@@ -1,0 +1,82 @@
+<tmpl_if name="limit_xmpp_anon" value="y">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-check custom">
+                {tmpl_var name='use_anon_host'}
+                <label class="form-check-label">
+                    {tmpl_var name='use_anon_host_txt'}
+                </label>
+            </div>
+        </div>
+    </div>
+</tmpl_if>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-check custom">
+            {tmpl_var name='use_pubsub'}
+            <label class="form-check-label">
+                {tmpl_var name='use_pubsub_txt'}
+            </label>
+        </div>
+    </div>
+</div>
+
+<tmpl_if name="limit_xmpp_vjud" value="y">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-check custom">
+                {tmpl_var name='use_vjud'}
+                <label class="form-check-label">
+                    {tmpl_var name='use_vjud_txt'}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group row" style="margin: 0;">
+                <label for="vjud_opt_mode" class="col-sm-3 col-form-label">{tmpl_var name='vjud_opt_mode_txt'}</label>
+                <div class="col-md-5"><select name="vjud_opt_mode" id="vjud_opt_mode" class="form-control">
+                        {tmpl_var name='vjud_opt_mode'}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</tmpl_if>
+<tmpl_if name="limit_xmpp_proxy" value="y">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-check custom">
+                {tmpl_var name='use_proxy'}
+                <label class="form-check-label">
+                    {tmpl_var name='use_proxy_txt'}
+                </label>
+            </div>
+        </div>
+    </div>
+</tmpl_if>
+<tmpl_if name="limit_xmpp_status" value="y">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-check custom">
+                {tmpl_var name='use_status_host'}
+                <label class="form-check-label">
+                    {tmpl_var name='use_status_host_txt'}
+                </label>
+            </div>
+        </div>
+    </div>
+</tmpl_if>
+
+<div class="row">
+    <div class="col-md-4">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <input type="hidden" name="type" value="modules" />
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/xmpp_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/xmpp_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

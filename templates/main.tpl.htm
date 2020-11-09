@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+
+    <title>
+        <tmpl_var name="company_name">
+            <tmpl_var name="app_title">
+    </title>
+
+    <meta name='viewport' content='width=device-width, user-scalable=yes'>
+    <meta name='description' lang='en' content='' />
+    <meta name='keywords' lang='en' content='' />
+    <meta name='robots' content='index, follow' />
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/firecups.css">
+    <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/bootstrap-datetimepicker.min.css" />
+    <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/pushy.min.css" />
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/fonts.min.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/glyphicon.min.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/icomoon.min.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/site.min.css">
+    <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/select2.css" />
+    <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/select2-custom.css" />
+
+</head>
+
+<div class="page">
+    <div class="page-main">
+        <div class="header py-4">
+            <div class="container">
+                <div class="d-flex">
+                    <a class="header-brand" href="/">
+                        <img src="{tmpl_var name=" base64_logo_txt"}" class="header-brand-img" alt="tabler logo">
+                    </a>
+                    <div class="d-flex order-lg-2 ml-auto">
+                        <div class="dropdown">
+                            <tmpl_if name="cpuser">
+                                <button type="button" id="logout-button" class="btn btn-sm btn-danger text-uppercase" data-load-content="login/logout.php">Logout admin</button>
+                            </tmpl_if>
+                        </div>
+                    </div>
+                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                        <span class="header-toggler-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 ml-auto">
+                        <form action='#' method='get' id='searchform' class="input-icon my-3 my-lg-0">
+                            <input type="search" class="form-control header-search" placeholder="..." tabindex="1" id="globalsearch">
+                            <div class="input-icon-addon">
+                                <i class="fe fe-search"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg order-lg-first">
+                        <ul class="nav-tabs border-0 flex-column flex-lg-row" id='topnav-container'>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <tmpl_if name='logged_in' value='y'>
+                        <div id='sidebar' class=''></div>
+                    </tmpl_if>
+                </div>
+                <div class="col-lg-10">
+                    <!--<div class="notification" data-toggle="modal" data-target="#datalogModal" style="display: none;">
+                        <span class="notification_text">{tmpl_var name="datalog_changes_count"}</span>
+                    </div>-->
+                    <form method="post" action="#" id="pageForm" name="pageForm" enctype="multipart/form-data" class='form-horizontal'>
+                        <div id="pageContent" data-startpage="{tmpl_var name=" startpage"}">
+                            <!-- AJAX CONTENT -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Datalogstatus Modal -->
+<div id="datalogModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{tmpl_var name="datalog_changes_txt"}</h4>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <tmpl_loop name="datalog_changes">
+                        <li><strong>{tmpl_var name="text"}:</strong> {tmpl_var name="count"}</li>
+                    </tmpl_loop>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                powered by <a href="<tmpl_var name=" app_link">" target="_blank"><tmpl_var name="app_title"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Datalogstatus Modal -->
+<script src="js/jquery.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/popper.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/bootstrap.bundle.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/bootstrap-datetimepicker.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/ispconfig.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/firecups.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/modernizr.custom.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/pushy.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/responsive.min.js"></script>
+<script src="themes/<tmpl_var name='current_theme'>/assets/firecups/js/select2.min.js"></script>
+<script src="js/scrigo.js.php"></script>
+<script src="js/jquery.ispconfigsearch.js"></script>
+<script src="js/jquery.tipsy.js"></script>
+<tmpl_loop name="js_d_includes">
+    <script src="js/js.d/<tmpl_var name='file'>"></script>
+</tmpl_loop>
+<script>
+    ISPConfig.tabChangeDiscard = '<tmpl_var name="tabchange_discard_enabled">';
+    ISPConfig.tabChangeWarning = '<tmpl_var name="tabchange_warning_enabled">';
+    ISPConfig.tabChangeWarningTxt = '<tmpl_var name="global_tabchange_warning_txt">';
+    ISPConfig.tabChangeDiscardTxt = '<tmpl_var name="global_tabchange_discard_txt">';
+          
+          <tmpl_if name="use_loadindicator" value="y">ISPConfig.setOption('useLoadIndicator', true);</tmpl_if>
+          <tmpl_if name="use_combobox" value="y">ISPConfig.setOption('useComboBox', true);</tmpl_if>
+
+    $(document).ready(function () {
+        $('#globalsearch').ispconfigSearch({
+            dataSrc: '/dashboard/ajax_get_json.php?type=globalsearch',
+            resultsLimit: '$ <tmpl_var name="globalsearch_resultslimit_of_txt"> % <tmpl_var name="globalsearch_resultslimit_results_txt">',
+            noResultsText: '<tmpl_var name="globalsearch_noresults_text_txt">',
+            noResultsLimit: '<tmpl_var name="globalsearch_noresults_limit_txt">',
+            searchFieldWatermark: '<tmpl_var name="globalsearch_searchfield_watermark_txt">',
+            resultBoxPosition: ''
+        });
+
+    });
+</script>
+</body>
+
+</html>
