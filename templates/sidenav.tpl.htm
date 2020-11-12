@@ -1,31 +1,78 @@
-    <div class="card sidebar">
-        <div class="card-body text-left">
-            <div class="list-group list-group-flush">
-                <tmpl_loop name="nav_left">          
-                <tmpl_if name="title">
-                    <a href="#" class="list-group-item list-group-item-action" <tmpl_if name="is_link" op="!=" value="no"><tmpl_if name="startpage">data-load-content="<tmpl_var name='startpage'>"</tmpl_if></tmpl_if>>
-                        <i class="title-icon"></i> <span style="font-weight: bold;"><tmpl_var name="title"></span>
-                    </a>
-                </tmpl_if>
-                <div class="list-group list-group-flush">
-                <tmpl_loop name="items">
-                    <tmpl_if name="link">
-                        <tmpl_if name="target" op="==" value="_blank">
-                                <a href="<tmpl_var name='link'>" target="_blank" class="list-group-item list-group-item-action list-targets">
-                        <tmpl_elseif name="target" op="==" value="_top">
-                                <a href="<tmpl_var name='link'>" target="_top" class="list-group-item list-group-item-action list-targets">
-                        <tmpl_else>
-                                <a href="#" data-load-content="<tmpl_var name='link'>" class="list-group-item list-group-item-action list-targets">
+<div class="row" id="sidebarDropdown">
+    <div class=" col-md-12">
+
+        <div class="dropdown show" style="padding-top: 10px; display: block;">
+            <a class="btn btn-default dropdown-toggle form-control" href="#" role="button" id="dropdownNavLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Navigation
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownNavLink" style="width: 100%;">
+                <tmpl_loop name="nav_left">
+                    <tmpl_loop name="items">
+                        <tmpl_if name="link">
+                            <tmpl_if name="target" op="==" value="_blank">
+                                <a href="<tmpl_var name='link'>" target="_blank" class="dropdown-item">
+                                    <tmpl_elseif name="target" op="==" value="_top">
+                                        <a href="<tmpl_var name='link'>" target="_top" class="dropdown-item">
+                                            <tmpl_else>
+                                                <a href="#" data-load-content="<tmpl_var name='link'>" class="dropdown-item">
+                            </tmpl_if>
                         </tmpl_if>
-                    </tmpl_if>
-                    <tmpl_if name="title"><tmpl_var name="title"></tmpl_if>
-                    <tmpl_if name="image"><div align="center"><tmpl_var name="image"></div></tmpl_if>                   
-                    <tmpl_if name="link">
-                    </a>
-                    </tmpl_if>
+                        <tmpl_if name="title">
+                            <tmpl_var name="title">
+                        </tmpl_if>
+                        <tmpl_if name="image">
+                            <div align="center">
+                                <tmpl_var name="image">
+                            </div>
+                        </tmpl_if>
+                        <tmpl_if name="link">
+                            </a>
+                        </tmpl_if>
+                    </tmpl_loop>
                 </tmpl_loop>
-            </tmpl_loop>
             </div>
         </div>
     </div>
+</div>
+<div class="card sidebar">
+    <div class="card-body text-left">
 
+        <div class="list-group list-group-flush">
+            <tmpl_loop name="nav_left">
+                <tmpl_if name="title">
+                    <a href="#" class="list-group-item list-group-item-action" <tmpl_if name="is_link" op="!=" value="no">
+                        <tmpl_if name="startpage">data-load-content="<tmpl_var name='startpage'>"</tmpl_if>
+                </tmpl_if>>
+                <i class="title-icon"></i> <span style="font-weight: bold;">
+                    <tmpl_var name="title">
+                </span>
+                </a>
+                </tmpl_if>
+                <div class="list-group list-group-flush">
+                    <tmpl_loop name="items">
+                        <tmpl_if name="link">
+                            <tmpl_if name="target" op="==" value="_blank">
+                                <a href="<tmpl_var name='link'>" target="_blank" class="list-group-item list-group-item-action list-targets">
+                                    <tmpl_elseif name="target" op="==" value="_top">
+                                        <a href="<tmpl_var name='link'>" target="_top" class="list-group-item list-group-item-action list-targets">
+                                            <tmpl_else>
+                                                <a href="#" data-load-content="<tmpl_var name='link'>" class="list-group-item list-group-item-action list-targets">
+                            </tmpl_if>
+                        </tmpl_if>
+                        <tmpl_if name="title">
+                            <tmpl_var name="title">
+                        </tmpl_if>
+                        <tmpl_if name="image">
+                            <div align="center">
+                                <tmpl_var name="image">
+                            </div>
+                        </tmpl_if>
+                        <tmpl_if name="link">
+                            </a>
+                        </tmpl_if>
+                    </tmpl_loop>
+            </tmpl_loop>
+        </div>
+    </div>
+</div>

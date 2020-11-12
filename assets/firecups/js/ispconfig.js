@@ -9,6 +9,7 @@ var ISPConfig = {
 	registeredHooks: new Array(),
 	new_tpl_add_id: 0,
 	dataLogTimer: 0,
+	bootboxOpen: 0,
 
 	options: {
 		useLoadIndicator: false,
@@ -164,7 +165,17 @@ var ISPConfig = {
 					ISPConfig.showLoadIndicator();
 				},
 				success: function (data, textStatus, jqXHR) {
-					if (successMessage) alert(successMessage);
+					if (successMessage) {
+						ISPConfig.bootboxOpen = 1;
+						bootbox.alert({
+							message: "successMessage",
+							callback: function () {
+								ISPConfig.bootboxOpen = 0;
+							}
+						})
+						//alert(successMessage);
+					}
+
 					if (jqXHR.responseText.indexOf('HEADER_REDIRECT:') > -1) {
 						var parts = jqXHR.responseText.split(':');
 						ISPConfig.loadContent(parts[1]);
@@ -450,9 +461,29 @@ var ISPConfig = {
 	},
 
 	confirm_action: function (link, confirmation) {
-		if (window.confirm(confirmation)) {
-			ISPConfig.loadContent(link);
-		}
+
+		ISPConfig.bootboxOpen = 1;
+
+		bootbox.confirm({
+			message: confirmation,
+			buttons: {
+				confirm: {
+					label: 'Yes',
+					className: 'btn-success'
+				},
+				cancel: {
+					label: 'No',
+					className: 'btn-danger'
+				}
+			},
+			callback: function (result) {
+				if (result == true) {
+					console.log('This was logged in the callback: ' + result);
+					ISPConfig.loadContent(link);
+					ISPConfig.bootboxOpen = 0;
+				}
+			}
+		});
 	},
 
 	loadContentInto: function (elementid, pagename) {
@@ -532,7 +563,10 @@ var ISPConfig = {
 					}, 2000);
 				} else {
 					$('.notification').css('display', 'none');
-					$('.modal-body').html('');
+					if (ISPConfig.bootboxOpen == 0) {
+						$(".modal-body").html('');
+					}
+					//$('.modal-body').not(".bootbox").html('');
 					$('#datalogModal').modal('hide');
 					dataLogTimer = setTimeout(function () {
 						ISPConfig.dataLogNotification();
@@ -563,7 +597,14 @@ var ISPConfig = {
 			$('#template_additional').val(newVal.join('/'));
 			//alert('additional template ' + addTplText + ' added to customer');
 		} else {
-			alert('no additional template selcted');
+			ISPConfig.bootboxOpen = 1;
+			bootbox.alert({
+				message: "no additional template selected",
+				callback: function () {
+					ISPConfig.bootboxOpen = 0;
+				}
+			})
+			//alert('no additional template selcted');
 		}
 	},
 
@@ -606,7 +647,13 @@ var ISPConfig = {
 			$('#template_additional').val(newVal);
 			//alert('additional template ' + addTplText + ' deleted from customer');
 		} else {
-			alert('no additional template selcted');
+			ISPConfig.bootboxOpen = 1;
+			bootbox.alert({
+				message: "no additional template selected",
+				callback: function () {
+					ISPConfig.bootboxOpen = 0;
+				}
+			})
 		}
 	}
 };

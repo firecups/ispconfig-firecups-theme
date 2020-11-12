@@ -762,7 +762,13 @@
         .click(function (e) {
             if (custom_template_selected()) return true;
             e.preventDefault();
-            alert('{tmpl_var name="err_msg_master_tpl_set"}');
+            bootbox.alert({
+                message: '{tmpl_var name="err_msg_master_tpl_set"}',
+                callback: function () {
+                    ISPConfig.bootboxOpen = 0;
+                }
+            })
+            //alert('{tmpl_var name="err_msg_master_tpl_set"}');
         })
         .focus(function () {
             if (custom_template_selected()) return true;
