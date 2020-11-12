@@ -103,14 +103,9 @@
                         </tr>
                     </tmpl_unless>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="{tmpl_if name=" has_robot"}9{tmpl_else}8{/tmpl_if}">
-                            <tmpl_var name="paging">
-                        </td>
-                    </tr>
-                </tfoot>
             </table>
+            <div class="float-right" style="padding-right: 10px;">
+                <tmpl_var name="paging">
+            </div>
         </div>
     </div>
-</div>

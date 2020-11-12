@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="template_name" class="control-label">{tmpl_var name='template_name_txt'}</label>
+            <input type="text" name="template_name" id="template_name" value="{tmpl_var name='template_name'}" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="template_file" class="control-label">{tmpl_var name='template_file_txt'}</label>
+            <input type="text" name="template_file" id="template_file" value="{tmpl_var name='template_file'}" class="form-control" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+            <select name="server_id" id="server_id" class="form-control">
+                {tmpl_var name='server_id'}
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="form-group">
+            {tmpl_var name='allservers'}
+            <label class="control-label">{tmpl_var name='allservers_txt'}</label>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            {tmpl_var name='active'}
+            <label class="control-label">{tmpl_var name='active_txt'}</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="description" class="control-label">{tmpl_var name='description_txt'}</label>
+            <textarea class="form-control" name="description" id="description" rows='10' cols='30'>{tmpl_var name='description'}</textarea>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="vm/openvz_ostemplate_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="vm/openvz_ostemplate_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
+    </div>
+</div>

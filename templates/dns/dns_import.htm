@@ -10,75 +10,90 @@
 	<div class="card">
 
 		<div class="pnl_formsarea">
-			<tmpl_if name="is_admin">
-				<div class="form-group">
-					<label for="server_id" class="col-sm-3 control-label">{tmpl_var name='server_id_txt'}</label>
-					<div class="col-sm-8"><select name="server_id" id="server_id" class="form-control">
-							{tmpl_var name='server_id'}
-						</select></div>
-				</div>
-				<div class="form-group">
-					<label for="client_group_id" class="col-sm-3 control-label">{tmpl_var name='client_txt'}</label>
-					<div class="col-sm-8"><select name="client_group_id" id="client_group_id" class="form-control">
-							{tmpl_var name='client_group_id'}
-						</select></div>
-				</div>
-				<tmpl_else>
-					<tmpl_if name="only_one_server">
-						<input type="hidden" id="server_id" name="server_id" value="{tmpl_var name='server_id_value'}" />
-						<tmpl_else>
-							<div class="form-group">
-								<label for="server_id" class="col-sm-3 control-label">{tmpl_var name='server_id_txt'}</label>
-								<div class="col-sm-8"><select name="server_id" id="server_id" class="form-control">
-										{tmpl_var name='server_id'}
-									</select></div>
-							</div>
-					</tmpl_if>
-			</tmpl_if>
-			<div class="form-group">
-				<label for="domain" class="col-sm-3 control-label">{tmpl_var name='domain_txt'}</label>
-				<tmpl_if name="domain_option">
-					<div class="col-sm-9"><select name="domain" id="domain" class="form-control">
-							{tmpl_var name='domain_option'}
-						</select></div>
+			<div class="row">
+				<tmpl_if name="is_admin">
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+							<select name="server_id" id="server_id" class="form-control">
+								{tmpl_var name='server_id'}
+							</select>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="form-group">
+							<label for="client_group_id" class="control-label">{tmpl_var name='client_txt'}</label>
+							<select name="client_group_id" id="client_group_id" class="form-control">
+								{tmpl_var name='client_group_id'}
+							</select>
+						</div>
+					</div>
 					<tmpl_else>
-						<div class="col-sm-8"><input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" onkeydown="keydown(event.which);" /></div>
+						<tmpl_if name="only_one_server">
+							<input type="hidden" id="server_id" name="server_id" value="{tmpl_var name='server_id_value'}" />
+							<tmpl_else>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+										<select name="server_id" id="server_id" class="form-control">
+											{tmpl_var name='server_id'}
+										</select>
+									</div>
+								</div>
+						</tmpl_if>
 				</tmpl_if>
-				<div class="col-sm-3 col-text"></div>
-				<div class="col-sm-9 col-text">
-					<tmpl_var name='domain_field_desc_txt' }</div>
-				</div>
-				<div class="form-group">
-					<label for="file" class="col-sm-3 control-label">{tmpl_var name='zonefile_to_import_txt'}</label>
-					<div class="col-sm-8 col-text"><input name="file" id="file" size="30" type="file" class="fileUpload" /></div>
-				</div>
-
-				<tmpl_if name="msg">
-					<div id="OKMsg">
-						<p>
-							<tmpl_var name="msg">
-						</p>
-					</div>
-				</tmpl_if>
-				<tmpl_if name="error">
-					<div class='alert alert-danger clear'>
-						<div class='alert-label'>
-							<strong>
-								<tmpl_var name="error_txt">
-							</strong>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label for="domain" class="control-label">{tmpl_var name='domain_txt'}</label>
+						<tmpl_if name="domain_option">
+							<select name="domain" id="domain" class="form-control">
+								{tmpl_var name='domain_option'}
+							</select>
+							<tmpl_else>
+								<input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" onkeydown="keydown(event.which);" />
+						</tmpl_if>
+						<div class="col-text"></div>
+						<div class="col-text">
+							<tmpl_var name='domain_field_desc_txt' }</div>
 						</div>
-						<div class='alert-content'>
-							<ul style="list-style-type:none">
-								<tmpl_var name="error">
-							</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<div class="form-group">
+							<label for="file" class="control-label">{tmpl_var name='zonefile_to_import_txt'}</label>
+							<div class="col-text"><input name="file" id="file" size="30" type="file" class="fileUpload" /></div>
 						</div>
 					</div>
-				</tmpl_if>
-
-				<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-				<div class="clear">
-					<div class="right">
+					<tmpl_if name="msg">
+						<div id="OKMsg">
+							<p>
+								<tmpl_var name="msg">
+							</p>
+						</div>
+					</tmpl_if>
+					<tmpl_if name="error">
+						<div class='alert alert-danger clear'>
+							<div class='alert-label'>
+								<strong>
+									<tmpl_var name="error_txt">
+								</strong>
+							</div>
+							<div class='alert-content'>
+								<ul style="list-style-type:none">
+									<tmpl_var name="error">
+								</ul>
+							</div>
+						</div>
+					</tmpl_if>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<input type="hidden" name="id" value="{tmpl_var name='id'}">
+					<div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
 						<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="dns/dns_import.php" data-form-upload="true">{tmpl_var name='btn_save_txt'}</button>
 						<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="dns/dns_soa_list.php">{tmpl_var name='btn_cancel_txt'}</button>
 					</div>

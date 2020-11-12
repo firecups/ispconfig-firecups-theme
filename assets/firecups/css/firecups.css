@@ -1863,7 +1863,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgb(99 99 99 / 10%)
 }
 
 .table-primary,
@@ -2738,7 +2738,7 @@ fieldset:disabled a.btn {
 .btn-secondary {
   color: var(--darker);
   background-color: var(--secondary);
-  border-color: var(--secondary);
+  border-color: var(--gray);
 }
 
 .btn-secondary:hover {
@@ -5093,6 +5093,8 @@ input[type="button"].btn-block {
   padding-left: 0;
   list-style: none;
   border-radius: 3px;
+  float: right;
+  padding-top: 15px;
 }
 
 .page-link {
@@ -12991,10 +12993,6 @@ a.icon:hover {
   min-width: 2.375rem;
 }
 
-.btn i {
-  font-size: 1rem;
-  vertical-align: -2px;
-}
 
 .btn-icon {
   padding-left: .5rem;
@@ -18247,6 +18245,7 @@ z-index: 100;
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 1000;
 }
 
 #ajaxloader {

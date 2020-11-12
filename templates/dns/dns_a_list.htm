@@ -1,55 +1,53 @@
-<div class="row row-cards row-deck">
+<div style="padding: 15px">
 
-    <div class="card">
-
-        <div class="pnl_toolsarea">
-            <tmpl_if name='datalog_changes_count' op='>' value='0'>
-                <div class="systemmonitor-state state-info">
-                    <div class="status"></div>
-                    <div class="statusMsg">
-                        {tmpl_var name="datalog_changes_txt"}
-                        <ul>
-                            <tmpl_loop name="datalog_changes">
-                                <li><strong>{tmpl_var name="text"}:</strong> {tmpl_var name="count"}</li>
-                            </tmpl_loop>
-                        </ul>
-                        {tmpl_var name="datalog_changes_end_txt"}
-                    </div>
-                </div>
-            </tmpl_if>
-
-
-            <div class="dropdown show" style="padding-bottom: 10px;">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Add new Record
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_a_edit.php?zone={tmpl_var name='parent_id'}">A</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_aaaa_edit.php?zone={tmpl_var name='parent_id'}">AAAA</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_alias_edit.php?zone={tmpl_var name='parent_id'}">ALIAS</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_caa_edit.php?zone={tmpl_var name='parent_id'}">CAA</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_cname_edit.php?zone={tmpl_var name='parent_id'}">CNAME</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_dname_edit.php?zone={tmpl_var name='parent_id'}">DNAME</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_dkim_edit.php?zone={tmpl_var name='parent_id'}">DKIM</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_ds_edit.php?zone={tmpl_var name='parent_id'}">DS</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_dmarc_edit.php?zone={tmpl_var name='parent_id'}">DMARC</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_hinfo_edit.php?zone={tmpl_var name='parent_id'}">HINFO</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_loc_edit.php?zone={tmpl_var name='parent_id'}">LOC</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_mx_edit.php?zone={tmpl_var name='parent_id'}">MX</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_naptr_edit.php?zone={tmpl_var name='parent_id'}">NAPTR</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_ns_edit.php?zone={tmpl_var name='parent_id'}">NS</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_ptr_edit.php?zone={tmpl_var name='parent_id'}">PTR</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_rp_edit.php?zone={tmpl_var name='parent_id'}">RP</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_spf_edit.php?zone={tmpl_var name='parent_id'}">SPF</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_srv_edit.php?zone={tmpl_var name='parent_id'}">SRV</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_sshfp_edit.php?zone={tmpl_var name='parent_id'}">SSHFP</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_tlsa_edit.php?zone={tmpl_var name='parent_id'}">TLSA</a>
-                    <a class="dropdown-item" href="#" data-load-content="dns/dns_txt_edit.php?zone={tmpl_var name='parent_id'}">TXT</a>
+    <div class="pnl_toolsarea">
+        <tmpl_if name='datalog_changes_count' op='>' value='0'>
+            <div class="systemmonitor-state state-info">
+                <div class="status"></div>
+                <div class="statusMsg">
+                    {tmpl_var name="datalog_changes_txt"}
+                    <ul>
+                        <tmpl_loop name="datalog_changes">
+                            <li><strong>{tmpl_var name="text"}:</strong> {tmpl_var name="count"}</li>
+                        </tmpl_loop>
+                    </ul>
+                    {tmpl_var name="datalog_changes_end_txt"}
                 </div>
             </div>
+        </tmpl_if>
 
-            <!--
+
+        <div class="dropdown show" style="padding-bottom: 10px;">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add new Record
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_a_edit.php?zone={tmpl_var name='parent_id'}">A</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_aaaa_edit.php?zone={tmpl_var name='parent_id'}">AAAA</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_alias_edit.php?zone={tmpl_var name='parent_id'}">ALIAS</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_caa_edit.php?zone={tmpl_var name='parent_id'}">CAA</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_cname_edit.php?zone={tmpl_var name='parent_id'}">CNAME</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_dname_edit.php?zone={tmpl_var name='parent_id'}">DNAME</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_dkim_edit.php?zone={tmpl_var name='parent_id'}">DKIM</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_ds_edit.php?zone={tmpl_var name='parent_id'}">DS</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_dmarc_edit.php?zone={tmpl_var name='parent_id'}">DMARC</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_hinfo_edit.php?zone={tmpl_var name='parent_id'}">HINFO</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_loc_edit.php?zone={tmpl_var name='parent_id'}">LOC</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_mx_edit.php?zone={tmpl_var name='parent_id'}">MX</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_naptr_edit.php?zone={tmpl_var name='parent_id'}">NAPTR</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_ns_edit.php?zone={tmpl_var name='parent_id'}">NS</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_ptr_edit.php?zone={tmpl_var name='parent_id'}">PTR</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_rp_edit.php?zone={tmpl_var name='parent_id'}">RP</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_spf_edit.php?zone={tmpl_var name='parent_id'}">SPF</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_srv_edit.php?zone={tmpl_var name='parent_id'}">SRV</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_sshfp_edit.php?zone={tmpl_var name='parent_id'}">SSHFP</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_tlsa_edit.php?zone={tmpl_var name='parent_id'}">TLSA</a>
+                <a class="dropdown-item" href="#" data-load-content="dns/dns_txt_edit.php?zone={tmpl_var name='parent_id'}">TXT</a>
+            </div>
+        </div>
+
+        <!--
             <div class="buttons topbuttons">
                 <button class="btn btn-success dns-record-btn" type="button" data-load-content="dns/dns_a_edit.php?zone={tmpl_var name='parent_id'}">A</button>
                 <button class="btn btn-success dns-record-btn" type="button" data-load-content="dns/dns_aaaa_edit.php?zone={tmpl_var name='parent_id'}">AAAA</button>
@@ -74,71 +72,71 @@
                 <button class="btn btn-success dns-record-btn" type="button" data-load-content="dns/dns_txt_edit.php?zone={tmpl_var name='parent_id'}">TXT</button>
             </div>
 -->
-        </div>
-
-        <div class="table-responsive">
-            <table class="table card-table table-vcenter table-hover">
-                <thead class="thead-dark form-group-sm">
-                    <tr>
-                        <th class="tiny-col" data-column="active">
-                            <tmpl_var name="active_txt">
-                        </th>
-                        <th data-column="type">
-                            <tmpl_var name="type_txt">
-                        </th>
-                        <th data-column="name">
-                            <tmpl_var name="name_txt">
-                        </th>
-                        <th data-column="data">
-                            <tmpl_var name="data_txt">
-                        </th>
-                        <th data-column="aux">
-                            <tmpl_var name="aux_txt">
-                        </th>
-                        <th data-column="ttl">
-                            <tmpl_var name="ttl_txt">
-                        </th>
-                        <th class="small-col text-right">{tmpl_var name='search_limit'}</th>
-                    </tr>
-                    <tr>
-                        <td><select class="form-control" name="search_active">{tmpl_var name='search_active'}</select></td>
-                        <td><select class="form-control" name="search_type">{tmpl_var name='search_type'}</select></td>
-                        <td><input class="form-control" type="text" name="search_name" value="{tmpl_var name='search_name'}" /></td>
-                        <td><input class="form-control" type="text" name="search_data" value="{tmpl_var name='search_data'}" /></td>
-                        <td><input class="form-control" type="text" name="search_aux" value="{tmpl_var name='search_aux'}" /></td>
-                        <td><input class="form-control" type="text" name="search_ttl" value="{tmpl_var name='search_ttl'}" /></td>
-                        <td class="text-right">
-                            <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" onclick="return ISPConfig.changeTab('dns_records','dns/dns_soa_edit.php');"><span class="icon icon-filter"></span></button>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tmpl_loop name="records">
-                        <tr>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="active"}</a></td>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="type"}</a></td>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}" data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='name'}">{tmpl_var name="name"}</a></td>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}" data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='data'}">{tmpl_var name="data"}</a></td>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="aux"}</a></td>
-                            <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="ttl"}</a></td>
-                            <td class="text-right">
-                                <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('dns/dns_rr_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
-                            </td>
-                        </tr>
-                    </tmpl_loop>
-                    <tmpl_unless name="records">
-                        <tr class="tbl_row_noresults tbl_row_<tmpl_if name='__EVEN__'}even<tmpl_else>uneven</tmpl_if>">
-                            <td colspan="7">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
-                        </tr>
-                    </tmpl_unless>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="7">
-                            <tmpl_var name="paging">
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
     </div>
+
+    <div class="table-responsive">
+        <table class="table card-table table-vcenter table-hover">
+            <thead class="thead-dark form-group-sm">
+                <tr>
+                    <th class="tiny-col" data-column="active">
+                        <tmpl_var name="active_txt">
+                    </th>
+                    <th data-column="type">
+                        <tmpl_var name="type_txt">
+                    </th>
+                    <th data-column="name">
+                        <tmpl_var name="name_txt">
+                    </th>
+                    <th data-column="data">
+                        <tmpl_var name="data_txt">
+                    </th>
+                    <th data-column="aux">
+                        <tmpl_var name="aux_txt">
+                    </th>
+                    <th data-column="ttl">
+                        <tmpl_var name="ttl_txt">
+                    </th>
+                    <th class="small-col text-right">{tmpl_var name='search_limit'}</th>
+                </tr>
+                <tr>
+                    <td><select class="form-control" name="search_active">{tmpl_var name='search_active'}</select></td>
+                    <td><select class="form-control" name="search_type">{tmpl_var name='search_type'}</select></td>
+                    <td><input class="form-control" type="text" name="search_name" value="{tmpl_var name='search_name'}" /></td>
+                    <td><input class="form-control" type="text" name="search_data" value="{tmpl_var name='search_data'}" /></td>
+                    <td><input class="form-control" type="text" name="search_aux" value="{tmpl_var name='search_aux'}" /></td>
+                    <td><input class="form-control" type="text" name="search_ttl" value="{tmpl_var name='search_ttl'}" /></td>
+                    <td class="text-right">
+                        <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" onclick="return ISPConfig.changeTab('dns_records','dns/dns_soa_edit.php');"><span class="icon icon-filter"></span></button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tmpl_loop name="records">
+                    <tr>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="active"}</a></td>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="type"}</a></td>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}" data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='name'}">{tmpl_var name="name"}</a></td>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}" data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='data'}">{tmpl_var name="data"}</a></td>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="aux"}</a></td>
+                        <td><a href="#" data-load-content="dns/dns_{tmpl_var name='type_lowercase'}_edit.php?id={tmpl_var name='id'}">{tmpl_var name="ttl"}</a></td>
+                        <td class="text-right">
+                            <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('dns/dns_rr_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
+                        </td>
+                    </tr>
+                </tmpl_loop>
+                <tmpl_unless name="records">
+                    <tr class="tbl_row_noresults tbl_row_<tmpl_if name='__EVEN__'}even<tmpl_else>uneven</tmpl_if>">
+                        <td colspan="7">{tmpl_var name='globalsearch_noresults_text_txt'}</td>
+                    </tr>
+                </tmpl_unless>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                        <tmpl_var name="paging">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			{tmpl_var name='additional_ip'}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<input type="hidden" name="id" value="{tmpl_var name='id'}">
+		<div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+			<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="vm/openvz_vm_edit.php">{tmpl_var name='btn_save_txt'}</button>
+			<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="vm/openvz_vm_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+		</div>
+	</div>
+</div>
