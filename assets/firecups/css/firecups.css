@@ -1866,6 +1866,10 @@ pre code {
   background-color: rgb(99 99 99 / 10%)
 }
 
+tbody tr {
+  line-height: 2rem;
+}
+
 .table-primary,
 .table-primary>th,
 .table-primary>td {

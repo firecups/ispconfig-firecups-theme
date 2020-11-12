@@ -1,14 +1,18 @@
-<div class="form-group">
-    <label for="hfs_name" class="col-sm-3 control-label">{tmpl_var name='faq_section_name_txt'}</label>
-    <div class="col-sm-9"><input type="text" name="hfs_name" id="hfs_name" value="{tmpl_var name='hfs_name'}" class="form-control" /></div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label for="hfs_name" class="control-label">{tmpl_var name='faq_section_name_txt'}</label>
+            <input type="text" name="hfs_name" id="hfs_name" value="{tmpl_var name='hfs_name'}" class="form-control" />
+        </div>
+    </div>
 </div>
 
-
-<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-<div class="clear">
-    <div class="right">
-        <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="help/faq_sections_edit.php">{tmpl_var name='btn_save_txt'}</button>
-        <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="help/faq_sections_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="help/faq_sections_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="help/faq_sections_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
     </div>
 </div>
