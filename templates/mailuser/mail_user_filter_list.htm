@@ -9,7 +9,7 @@
     <div class="card">
 
         <div class="float-right">
-            <button class="btn btn-default formbutton-success btn-right-block float-right " type="button" data-load-content="mailuser/mail_user_filter_edit.php">{tmpl_var name="add_new_record_txt"}</button>
+            <button class="btn btn-success btn-right-block float-right " type="button" data-load-content="mailuser/mail_user_filter_edit.php">{tmpl_var name="add_new_record_txt"}</button>
         </div>
 
         <div class="table-responsive">
@@ -24,7 +24,7 @@
                     <tr>
                         <td><input class="form-control" type="text" name="search_rulename" value="{tmpl_var name='search_rulename'}" /></td>
                         <td class="text-right">
-                            <button type="button" class="btn btn-default formbutton-default formbutton-narrow" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="mail/mail_user_edit.php"><span class="icon icon-filter"></span></button>
+                            <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="mail/mail_user_edit.php"><span class="icon icon-filter"></span></button>
                         </td>
                     </tr>
                 </thead>
@@ -33,7 +33,7 @@
                         <tr>
                             <td><a href="#" data-load-content="mailuser/mail_user_filter_edit.php?id={tmpl_var name='id'}">{tmpl_var name="rulename"}</a></td>
                             <td class="text-right">
-                                <a class="btn btn-default formbutton-danger formbutton-narrow" href="javascript: ISPConfig.confirm_action('mailuser/mail_user_filter_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
+                                <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('mailuser/mail_user_filter_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
                             </td>
                         </tr>
                     </tmpl_loop>

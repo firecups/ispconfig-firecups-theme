@@ -1,19 +1,29 @@
 <div class='page-header'>
-	<h1 class="page-title"><tmpl_var name="list_head_txt"></h1>
+    <h1 class="page-title">
+        <tmpl_var name="list_head_txt">
+    </h1>
 </div>
 
 <div class="row row-cards row-deck">
-    
+
     <div class="card">
-        
-            <div class="table-responsive">
-                <table class="table card-table table-vcenter table-hover">
-                    <thead class="thead-dark form-group-sm">
+
+        <div class="table-responsive">
+            <table class="table card-table table-vcenter table-hover">
+                <thead class="thead-dark form-group-sm">
                     <tr>
-                        <th data-column="tstamp"><tmpl_var name="tstamp_txt"></th>
-                        <th data-column="server_id"><tmpl_var name="server_id_txt"></th>
-                        <th data-column="action"><tmpl_var name="action_txt"></th>
-                        <th data-column="dbtable"><tmpl_var name="dbtable_txt"></th>
+                        <th data-column="tstamp">
+                            <tmpl_var name="tstamp_txt">
+                        </th>
+                        <th data-column="server_id">
+                            <tmpl_var name="server_id_txt">
+                        </th>
+                        <th data-column="action">
+                            <tmpl_var name="action_txt">
+                        </th>
+                        <th data-column="dbtable">
+                            <tmpl_var name="dbtable_txt">
+                        </th>
                         <th class="small-col text-right">{tmpl_var name='search_limit'}</th>
                     </tr>
                     <tr>
@@ -22,7 +32,7 @@
                         <td><select class="form-control" name="search_action">{tmpl_var name='search_action'}</select></td>
                         <td><input class="form-control" type="text" name="search_dbtable" value="{tmpl_var name='search_dbtable'}" /></td>
                         <td class="text-right">
-                            <button type="button" class="btn btn-default formbutton-default formbutton-narrow" name="Filter" id="Filter" value="{tmpl_var name="filter_txt"}" data-submit-form="pageForm" data-form-action="monitor/dataloghistory_list.php"><span class="icon icon-filter"></span></button>
+                            <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="monitor/dataloghistory_list.php"><span class="icon icon-filter"></span></button>
                         </td>
                     </tr>
                 </thead>
@@ -44,7 +54,9 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5"><tmpl_var name="paging"></td>
+                        <td colspan="5">
+                            <tmpl_var name="paging">
+                        </td>
                     </tr>
                 </tfoot>
             </table>

@@ -9,7 +9,7 @@
     <div class="card">
 
         <div class="float-right">
-            <button class="btn btn-default btn-right-block float-right formbutton-success" type="button" data-load-content="client/client_circle_edit.php">{tmpl_var name="add_new_record_txt"}</button>
+            <button class="btn btn-success btn-right-block float-right" type="button" data-load-content="client/client_circle_edit.php">{tmpl_var name="add_new_record_txt"}</button>
         </div>
 
         <div class="table-responsive">
@@ -39,7 +39,7 @@
                         <td><input class="form-control" type="text" name="search_description" value="{tmpl_var name='search_description'}" /></td>
                         <td class="text-right">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default formbutton-default formbutton-narrow" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="client/client_circle_list.php"><span class="icon icon-filter"></span></button>
+                                <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="client/client_circle_list.php"><span class="icon icon-filter"></span></button>
                             </div>
                         </td>
                     </tr>
@@ -57,7 +57,7 @@
                                     name="description"}</a></td>
                             <td class="text-right">
                                 <div class="btn-group">
-                                    <a class="btn btn-default formbutton-danger formbutton-narrow" href="javascript: ISPConfig.confirm_action('client/client_circle_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
+                                    <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('client/client_circle_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
                                 </div>
                             </td>
                         </tr>

@@ -63,14 +63,14 @@ var ISPConfig = {
 
 				var atx = parent.offset().left + 150; //((parent.outerWidth(true) - indicator.outerWidth(true)) / 2);
 				var aty = parent.offset().top + 150;
-				indicator.css({
-					'left': atx,
-					'top': aty
-				}).fadeIn('fast', function () {
+				$('.loader-overlay').show();
+				indicator.fadeIn('fast', function () {
+
 					// check if loader should be hidden immediately
 					ISPConfig.indicatorCompleted = true;
 					if (ISPConfig.requestsRunning < 1) $(this).fadeOut('fast', function () {
 						$(this).hide();
+						$('.loader-overlay').hide();
 					});
 				});
 			}
@@ -85,6 +85,7 @@ var ISPConfig = {
 			ISPConfig.requestsRunning = 0; // just for the case...
 			if (ISPConfig.indicatorCompleted == true) $('#ajaxloader').fadeOut('fast', function () {
 				$('#ajaxloader').hide();
+				$('.loader-overlay').hide();
 			});
 		}
 	},

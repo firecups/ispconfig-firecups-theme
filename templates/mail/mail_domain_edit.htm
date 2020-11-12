@@ -111,7 +111,7 @@
             <input type="hidden" name="domain_module" value="0" id="domain_module" />
     </tmpl_if>
     <div class="col-sm-12">
-        <button class="btn btn-default formbutton-default" type="button" data-toggle="collapse" data-target="#toggle-dkim" aria-expanded="false" aria-controls="toggle-dkim">{tmpl_var name='dkim_settings_txt'}</button>
+        <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#toggle-dkim" aria-expanded="false" aria-controls="toggle-dkim">{tmpl_var name='dkim_settings_txt'}</button>
     </div>
 </div>
 <div id="toggle-dkim" class="collapse">
@@ -141,7 +141,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <a class="btn btn-default formbutton-default" id="dkim-button" value="{tmpl_var name='dkim_generate_txt'}">{tmpl_var name='dkim_generate_txt'}</a>
+            <a class="btn btn-secondary" id="dkim-button" value="{tmpl_var name='dkim_generate_txt'}">{tmpl_var name='dkim_generate_txt'}</a>
             <div class="form-group">
                 <textarea class="form-control" name="dkim_public" style="display:none;" id="dkim_public" rows='5' cols='30' readonly>{tmpl_var name='dkim_public'}</textarea>
             </div>
@@ -163,8 +163,8 @@
         <input type="hidden" name="id" value="{tmpl_var name='id'}">
         <input type="hidden" name="type" value="local">
         <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
-            <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/mail_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
-            <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/mail_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="mail/mail_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="mail/mail_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>
         </div>
     </div>
 </div>

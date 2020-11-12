@@ -1,7 +1,7 @@
 <!--
   <div class="form-group">
                <label for="file" class="col-sm-3 control-label">{tmpl_var name='logo_txt'}</label>
-               <div class="col-sm-3 col-text"><input name="file" id="file" size="30" type="file" class="fileUpload" /></div><div class="col-sm-6"><button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" id="start_upload">{tmpl_var name='upload_txt'}</button></div>
+               <div class="col-sm-3 col-text"><input name="file" id="file" size="30" type="file" class="fileUpload" /></div><div class="col-sm-6"><button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" id="start_upload">{tmpl_var name='upload_txt'}</button></div>
            </div>
   <div class="form-group">
                <label for="dashboard_atom_url_admin" class="col-sm-3 control-label">{tmpl_var name='used_logo_txt'}</label>
@@ -69,19 +69,19 @@
 <div class="form-group">
   <label class="col-sm-3 control-label">{tmpl_var name='tab_change_warning_txt'}</label>
   <div class="col-sm-9">
-    {tmpl_var name='tab_change_warning'}<br/>{tmpl_var name='tab_change_warning_note_txt'}
+    {tmpl_var name='tab_change_warning'}<br />{tmpl_var name='tab_change_warning_note_txt'}
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">{tmpl_var name='use_loadindicator_txt'}</label>
   <div class="col-sm-9">
-    {tmpl_var name='use_loadindicator'}<br/>{tmpl_var name='f5_to_reload_js_txt'}
+    {tmpl_var name='use_loadindicator'}<br />{tmpl_var name='f5_to_reload_js_txt'}
   </div>
 </div>
 <div class="form-group">
   <label class="col-sm-3 control-label">{tmpl_var name='use_combobox_txt'}</label>
   <div class="col-sm-9">
-    {tmpl_var name='use_combobox'}<br/>{tmpl_var name='f5_to_reload_js_txt'}
+    {tmpl_var name='use_combobox'}<br />{tmpl_var name='f5_to_reload_js_txt'}
   </div>
 </div>
 <div class="form-group">
@@ -113,14 +113,14 @@
 <div class="form-group">
   <label for="min_password_strength" class="col-sm-3 control-label">{tmpl_var name='min_password_strength_txt'}</label>
   <div class="col-sm-9"><select name="min_password_strength" id="min_password_strength" class="form-control">
-    {tmpl_var name='min_password_strength'}
+      {tmpl_var name='min_password_strength'}
     </select>
   </div>
 </div>
 <div class="form-group">
   <label for="ssh_authentication" class="col-sm-3 control-label">{tmpl_var name='ssh_authentication_txt'}</label>
   <div class="col-sm-9"><select name="ssh_authentication" id="ssh_authentication" class="form-control">
-    {tmpl_var name='ssh_authentication'}
+      {tmpl_var name='ssh_authentication'}
     </select>
   </div>
 </div>
@@ -146,8 +146,10 @@
 <tmpl_if name="error">
   <div class='alert alert-danger clear'>
     <div class='alert-label'>
-      <strong><tmpl_var name="error_txt"></strong>
-      </div>
+      <strong>
+        <tmpl_var name="error_txt">
+      </strong>
+    </div>
     <div class='alert-content'>
       <ul style="list-style-type:none">
         <tmpl_var name="error">
@@ -158,8 +160,8 @@
 <input type="hidden" name="id" id="id" value="{tmpl_var name='id'}">
 <div class="clear">
   <div class="right">
-    <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/system_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
-    <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+    <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/system_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
+    <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_list.php">{tmpl_var name='btn_cancel_txt'}</button>
   </div>
 </div>
 <!--<script language="JavaScript" type="text/javascript">
@@ -214,7 +216,7 @@
   			if(typeof data.error === 'undefined'){
   				// Success so call function to process the form
   				//console.log(data);
-  				$('#used_logo').html('<img src="'+data.data+'" />&nbsp;&nbsp;<a href="#" class="btn btn-default formbutton-danger formbutton-narrow" style="margin:5px" id="del_custom_logo"><i class="icon-trash-alt"> </i></a>');
+  				$('#used_logo').html('<img src="'+data.data+'" />&nbsp;&nbsp;<a href="#" class="btn btn-danger" style="margin:5px" id="del_custom_logo"><i class="icon-trash-alt"> </i></a>');
   				$('#logo').css({ "background": "url("+data.data+") no-repeat", "width": data.width, "height": data.height });
   			} else {
   				// Handle errors here

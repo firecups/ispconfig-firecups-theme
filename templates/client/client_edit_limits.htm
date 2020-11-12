@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="form-group" style="margin-left: 0.75rem;">
-                            <input type="button" value="{tmpl_var name='add_additional_template_txt'}" id="tpl_add_btn" class="btn btn-default formbutton-success" type="button" onclick="ISPConfig.addAdditionalTemplate();"><br />
+                            <input type="button" value="{tmpl_var name='add_additional_template_txt'}" id="tpl_add_btn" class="btn btn-success" type="button" onclick="ISPConfig.addAdditionalTemplate();"><br />
                             <label class="col-sm-12 control-label">{tmpl_var name='active_template_additional_txt'}</label>
                             <div id="template_additional_list" class="col-sm-9 col-text">
                                 <ul>
@@ -692,8 +692,8 @@
         <div class="col-md-12">
             <input type="hidden" name="id" value="{tmpl_var name='id'}">
             <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
-                <button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="client/client_edit.php">{tmpl_var name='btn_save_txt'}</button>
-                <button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="{tmpl_var name='session_module'}/client_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+                <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="client/client_edit.php">{tmpl_var name='btn_save_txt'}</button>
+                <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="{tmpl_var name='session_module'}/client_list.php">{tmpl_var name='btn_cancel_txt'}</button>
             </div>
         </div>
     </div>

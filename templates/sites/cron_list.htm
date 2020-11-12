@@ -1,27 +1,47 @@
 <div class='page-header'>
-	<h1 class="page-title"><tmpl_var name="list_head_txt"></h1>
+    <h1 class="page-title">
+        <tmpl_var name="list_head_txt">
+    </h1>
 </div>
 
 <div class="row row-cards row-deck">
-    
-        <div class="card">
-            <div class="float-right">
-                <button class="btn btn-default formbutton-success btn-right-block float-right" type="button" data-load-content="sites/cron_edit.php">{tmpl_var name="add_new_cron_txt"}</button>
-            </div>
 
-            <div class="table-responsive">
-			<table class="table card-table table-vcenter table-hover">
+    <div class="card">
+        <div class="float-right">
+            <button class="btn btn-success btn-right-block float-right" type="button" data-load-content="sites/cron_edit.php">{tmpl_var name="add_new_cron_txt"}</button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table card-table table-vcenter table-hover">
                 <thead class="thead-dark form-group-sm">
                     <tr>
-                        <th class="tiny-col" data-column="active"><tmpl_var name="active_txt"></th>
-                        <th data-column="server_id"><tmpl_var name="server_id_txt"></th>
-                        <th data-column="parent_domain_id"><tmpl_var name="parent_domain_id_txt"></th>
-                        <th data-column="run_min"><tmpl_var name="run_min_txt"></th>
-                        <th data-column="run_hour"><tmpl_var name="run_hour_txt"></th>
-                        <th data-column="run_mday"><tmpl_var name="run_mday_txt"></th>
-                        <th data-column="run_month"><tmpl_var name="run_month_txt"></th>
-                        <th data-column="run_wday"><tmpl_var name="run_wday_txt"></th>
-                        <th data-column="command"><tmpl_var name="command_txt"></th>
+                        <th class="tiny-col" data-column="active">
+                            <tmpl_var name="active_txt">
+                        </th>
+                        <th data-column="server_id">
+                            <tmpl_var name="server_id_txt">
+                        </th>
+                        <th data-column="parent_domain_id">
+                            <tmpl_var name="parent_domain_id_txt">
+                        </th>
+                        <th data-column="run_min">
+                            <tmpl_var name="run_min_txt">
+                        </th>
+                        <th data-column="run_hour">
+                            <tmpl_var name="run_hour_txt">
+                        </th>
+                        <th data-column="run_mday">
+                            <tmpl_var name="run_mday_txt">
+                        </th>
+                        <th data-column="run_month">
+                            <tmpl_var name="run_month_txt">
+                        </th>
+                        <th data-column="run_wday">
+                            <tmpl_var name="run_wday_txt">
+                        </th>
+                        <th data-column="command">
+                            <tmpl_var name="command_txt">
+                        </th>
                         <th class="small-col text-right">{tmpl_var name='search_limit'}</th>
                     </tr>
                     <tr>
@@ -35,7 +55,7 @@
                         <td><input class="form-control" type="text" name="search_run_wday" value="{tmpl_var name='search_run_wday'}" /></td>
                         <td><input class="form-control" type="text" name="search_command" value="{tmpl_var name='search_command'}" /></td>
                         <td class="text-right">
-                            <button type="button" class="btn btn-default formbutton-default formbutton-narrow" name="Filter" id="Filter" value="{tmpl_var name="filter_txt"}" data-submit-form="pageForm" data-form-action="sites/cron_list.php"><span class="icon icon-filter"></span></button>
+                            <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="sites/cron_list.php"><span class="icon icon-filter"></span></button>
                         </td>
                     </tr>
                 </thead>
@@ -52,8 +72,8 @@
                             <td><a href="#" data-load-content="sites/cron_edit.php?id={tmpl_var name='id'}">{tmpl_var name="run_wday"}</a></td>
                             <td><a href="#" data-load-content="sites/cron_edit.php?id={tmpl_var name='id'}" data-toggle="tooltip" data-placement="bottom" title="{tmpl_var name='command'}">{tmpl_var name="command"}</a></td>
                             <td class="text-right">
-                                <div class="buttons icons16">    
-                                    <a class="btn btn-default formbutton-danger formbutton-narrow" href="javascript: ISPConfig.confirm_action('sites/cron_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
+                                <div class="buttons icons16">
+                                    <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('sites/cron_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
                                 </div>
                             </td>
                         </tr>
@@ -66,7 +86,9 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="10"><tmpl_var name="paging"></td>
+                        <td colspan="10">
+                            <tmpl_var name="paging">
+                        </td>
                     </tr>
                 </tfoot>
             </table>

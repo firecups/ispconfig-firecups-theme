@@ -34,7 +34,7 @@
 		</div>
 	</tmpl_if>
 </tmpl_if>
-	
+
 <tmpl_if name="file_server_found">
 	<tmpl_if name="webdav_user_found">
 		<div class="form-group">
@@ -44,7 +44,7 @@
 		</div>
 	</tmpl_if>
 </tmpl_if>
-	
+
 <tmpl_if name="db_server_found">
 	<tmpl_if name="client_db_found">
 		<div class="form-group">
@@ -54,7 +54,7 @@
 		</div>
 	</tmpl_if>
 </tmpl_if>
-	
+
 <tmpl_if name="mail_server_found">
 	<tmpl_if name="mail_domain_found">
 		<div class="form-group">
@@ -116,7 +116,7 @@
 		</div>
 	</tmpl_if>
 </tmpl_if>
-	
+
 <tmpl_if name="vserver_server_found">
 	<tmpl_if name="vserver_found">
 		<div class="form-group">
@@ -126,7 +126,7 @@
 		</div>
 	</tmpl_if>
 </tmpl_if>
-	
+
 <tmpl_if name="firewall_server_found">
 	<div class="form-group">
 		<label for="resync_firewall" class="col-sm-2 control-label">{tmpl_var name="resync_firewall_txt"}</label>
@@ -134,16 +134,17 @@
 		<div class="col-sm-3"><select name="firewall_server_id" id="firewall_server_id" class="form-control">{tmpl_var name='firewall_server_id'}</select></div>
 	</div>
 </tmpl_if>
-	
+
 <div class="form-group">
-	<label for="resync_client" class="col-sm-2 control-label control-label-plain">{tmpl_var name="resync_client_txt"}</label> 
+	<label for="resync_client" class="col-sm-2 control-label control-label-plain">{tmpl_var name="resync_client_txt"}</label>
 	<div class="col-sm-1"><input type="checkbox" id="resync_client" value="1" name="resync_client"></div>
 </div>
-	
+
 <input type="hidden" name="id" value="{tmpl_var name='id'}">
 
-<div class="clear"><div class="right">
-	<button class="btn btn-default formbutton-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="tools/resync.php">{tmpl_var name='btn_start_txt'}</button>
-	<button class="btn btn-default formbutton-default" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="tools/resync.php">{tmpl_var name='btn_cancel_txt'}</button>
-</div></div>
-
+<div class="clear">
+	<div class="right">
+		<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="tools/resync.php">{tmpl_var name='btn_start_txt'}</button>
+		<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="tools/resync.php">{tmpl_var name='btn_cancel_txt'}</button>
+	</div>
+</div>

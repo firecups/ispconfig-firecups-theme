@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="float-right">
-            <button class="btn btn-default btn-right-block formbutton-success float-right" type="button" data-load-content="client/client_edit.php">{tmpl_var name="add_new_record_txt"}</button>
+            <button class="btn btn-success btn-right-block float-right" type="button" data-load-content="client/client_edit.php">{tmpl_var name="add_new_record_txt"}</button>
         </div>
 
         <div class="table-responsive">
@@ -59,7 +59,7 @@
                             <td><select class="form-control" name="search_validation_status">{tmpl_var name='search_validation_status'}</select></td>
                         </tmpl_if>
                         <td class="text-right">
-                            <button type="button" class="btn btn-default formbutton-default formbutton-narrow" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="client/client_list.php"><span class="icon icon-filter"></span></button>
+                            <button type="button" class="btn btn-secondary" name="Filter" id="Filter" value="{tmpl_var name=" filter_txt"}" data-submit-form="pageForm" data-form-action="client/client_list.php"><span class="icon icon-filter"></span></button>
                         </td>
                     </tr>
                 </thead>
@@ -80,19 +80,19 @@
                             <td class="text-right">
                                 <div class="btn-group">
                                     <tmpl_if name="has_robot">
-                                        <a class="btn btn-default formbutton-default formbutton-narrow" href="#" data-load-content="client/client_action.php?id={tmpl_var name='id'}" title="{tmpl_var name='client_actions_txt'}" style="background: no-repeat center url('themes/default/assets/images/arrow.png');"><span class="icon">&nbsp;&nbsp;</span></a>
+                                        <a class="btn btn-secondary" href="#" data-load-content="client/client_action.php?id={tmpl_var name='id'}" title="{tmpl_var name='client_actions_txt'}" style="background: no-repeat center url('themes/default/assets/images/arrow.png');"><span class="icon">&nbsp;&nbsp;</span></a>
                                         <tmpl_if name='activation_code' op='!=' value=''>
                                             <tmpl_if name='validation_status' op='==' value='review'>
-                                                <a class="btn btn-default formbutton-default formbutton-narrow" href="client/client_get_activation_pdf.php?id={tmpl_var name='id'}" style="background: no-repeat center url('billing/lib/icon/pdficon_small.gif');" title="{tmpl_var name='show_pdf_txt'}"><span class="icon">&nbsp;&nbsp;</span></a>
+                                                <a class="btn btn-secondary" href="client/client_get_activation_pdf.php?id={tmpl_var name='id'}" style="background: no-repeat center url('billing/lib/icon/pdficon_small.gif');" title="{tmpl_var name='show_pdf_txt'}"><span class="icon">&nbsp;&nbsp;</span></a>
                                             </tmpl_if>
                                         </tmpl_if>
                                     </tmpl_if>
                                     <tmpl_if name="is_admin">
-                                        <a class="btn btn-default formbutton-success formbutton-narrow" data-load-content="login/login_as.php?cid={tmpl_var name='id'}"><i class="icon-share-square"> </i></a>
+                                        <a class="btn btn-success" data-load-content="login/login_as.php?cid={tmpl_var name='id'}"><i class="icon-share-square"> </i></a>
                                         <tmpl_elseif name="is_reseller">
-                                            <a class="btn btn-default formbutton-success formbutton-narrow" data-load-content="login/login_as.php?cid={tmpl_var name='id'}"><i class="icon-share-square"> </i></a>
+                                            <a class="btn btn-success" data-load-content="login/login_as.php?cid={tmpl_var name='id'}"><i class="icon-share-square"> </i></a>
                                     </tmpl_if>
-                                    <a class="btn btn-default formbutton-danger formbutton-narrow" href="javascript: ISPConfig.confirm_action('client/client_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
+                                    <a class="btn btn-danger" href="javascript: ISPConfig.confirm_action('client/client_del.php?id={tmpl_var name='id'}&_csrf_id={tmpl_var name='csrf_id'}&_csrf_key={tmpl_var name='csrf_key'}&phpsessid={tmpl_var name='phpsessid'}','{tmpl_var name='delete_confirmation'}');"><i class="icon-trash-alt"> </i></a>
                                 </div>
                             </td>
                         </tr>
