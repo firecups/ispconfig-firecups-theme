@@ -1,218 +1,234 @@
 <div class="row">
-    <div class="col-md-10">
 
-        <tmpl_if name="config_error_msg">
-            <div class="alert alert-danger">
-                <p>
-                    <tmpl_var name="configuration_error_txt">
-                        <div>
-                            <div style="float:left;width:150px;">{tmpl_var name='config_error_tstamp'} :&nbsp;</div>
-                            <div style="padding-left:150px;">{tmpl_var name='config_error_msg'}</div>
-                        </div>
-                </p>
+
+    <tmpl_if name="config_error_msg">
+        <div class="alert alert-danger">
+            <p>
+                <tmpl_var name="configuration_error_txt">
+                    <div>
+                        <div style="float:left;width:150px;">{tmpl_var name='config_error_tstamp'} :&nbsp;</div>
+                        <div style="padding-left:150px;">{tmpl_var name='config_error_msg'}</div>
+                    </div>
+            </p>
+        </div>
+    </tmpl_if>
+    {tmpl_hook name="begin_form"}
+    <tmpl_if name="vhostdomain_type" value="domain">
+        <tmpl_if name="is_admin">
+            <div class="col-md-3">
+
+                <div class="form-group">
+                    <tmpl_if name="edit_disabled">
+                        <label for="server_id_disabled" class="control-label">{tmpl_var name='server_id_txt'}</label>
+                        <select name="server_id_disabled" id="server_id_disabled" class="form-control" disabled="disabled">
+                            {tmpl_var name='server_id'}
+                        </select>
+                        <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
+                        <tmpl_else>
+                            <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+                            <select name="server_id" id="server_id" class="form-control">
+                                {tmpl_var name='server_id'}
+                            </select>
+                    </tmpl_if>
+                </div>
             </div>
-        </tmpl_if>
-        {tmpl_hook name="begin_form"}
-        <div class="row">
-            <tmpl_if name="vhostdomain_type" value="domain">
 
-
+            <tmpl_unless name="domain_option">
                 <div class="col-md-3">
-                    <tmpl_if name="is_admin">
-                        <div class="form-group">
-                            <tmpl_if name="edit_disabled">
-                                <label for="server_id_disabled" class="control-label">{tmpl_var name='server_id_txt'}</label>
-                                <select name="server_id_disabled" id="server_id_disabled" class="form-control" disabled="disabled">
-                                    {tmpl_var name='server_id'}
-                                </select>
-                                <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
-                                <tmpl_else>
-                                    <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
-                                    <select name="server_id" id="server_id" class="form-control">
+                    <div class="form-group">
+                        <label for="client_group_id" class="control-label">{tmpl_var name='client_group_id_txt'}</label>
+                        <select name="client_group_id" id="client_group_id" class="form-control">
+                            {tmpl_var name='client_group_id'}
+                        </select>
+                    </div>
+                </div>
+            </tmpl_unless>
+            <tmpl_else>
+                <tmpl_if name="only_one_server">
+                    <input type="hidden" id="server_id" name="server_id" value="{tmpl_var name='server_id_value'}" />
+                    <tmpl_else>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <tmpl_if name="edit_disabled">
+                                    <label for="server_id_disabled" class="control-label">{tmpl_var name='server_id_txt'}</label>
+                                    <select name="server_id_disabled" id="server_id_disabled" class="form-control" disabled="disabled">
                                         {tmpl_var name='server_id'}
                                     </select>
-                            </tmpl_if>
-                        </div>
-                        <tmpl_unless name="domain_option">
-                            <div class="form-group">
-                                <label for="client_group_id" class="control-label">{tmpl_var name='client_group_id_txt'}</label>
-                                <select name="client_group_id" id="client_group_id" class="form-control">
-                                    {tmpl_var name='client_group_id'}
-                                </select>
-                            </div>
-                        </tmpl_unless>
-                        <tmpl_else>
-                            <tmpl_if name="only_one_server">
-                                <input type="hidden" id="server_id" name="server_id" value="{tmpl_var name='server_id_value'}" />
-                                <tmpl_else>
-                                    <div class="form-group">
-                                        <tmpl_if name="edit_disabled">
-                                            <label for="server_id_disabled" class="control-label">{tmpl_var name='server_id_txt'}</label>
-                                            <select name="server_id_disabled" id="server_id_disabled" class="form-control" disabled="disabled">
-                                                {tmpl_var name='server_id'}
-                                            </select>
-                                            <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
-                                            <tmpl_else>
-                                                <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
-                                                <select name="server_id" id="server_id" class="form-control">
-                                                    {tmpl_var name='server_id'}
-                                                </select>
-                                        </tmpl_if>
-                                    </div>
-                            </tmpl_if>
-                    </tmpl_if>
-
-                    <tmpl_if name="is_reseller">
-                        <tmpl_unless name="domain_option">
-                            <div class="form-group">
-                                <label for="client_group_id" class="control-label">{tmpl_var name='client_group_id_txt'}</label>
-                                <select name="client_group_id" id="client_group_id" class="form-control">
-                                    {tmpl_var name='client_group_id'}
-                                </select>
-                            </div>
-                        </tmpl_unless>
-                    </tmpl_if>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="ip_address" class="control-label">{tmpl_var name='ip_address_txt'}</label>
-                        <select name="ip_address" id="ip_address" class="form-control">
-                            {tmpl_var name='ip_address'}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="domain" class="control-label">{tmpl_var name='domain_txt'}</label>
-                        <tmpl_if name="domain_option">
-                            <select name="domain" id="domain" class="form-control">
-                                {tmpl_var name='domain_option'}
-                            </select>
-                            <tmpl_else>
-                                <input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" />
-                        </tmpl_if>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="ipv6_address" class="control-label">{tmpl_var name='ipv6_address_txt'}</label>
-                        <select name="ipv6_address" id="ipv6_address" class="form-control">
-                            {tmpl_var name='ipv6_address'}
-                        </select>
-                    </div>
-                    <tmpl_if name="web_aliasdomains_info">
-                        <div class="form-group">
-                            <label for="web_aliasdomains" class="control-label">{tmpl_var name='dependent_domains_txt'}</label>
-                            <textarea name="web_aliasdomains" id="web_aliasdomains" class="form-control" disabled="disabled"><tmpl_loop name="web_aliasdomains_info">{tmpl_var name='domain'}
-    </tmpl_loop></textarea>
-                        </div>
-                    </tmpl_if>
-                </div>
-                <div class="col-md-12">
-                    <tmpl_if name="edit_disabled">
-                        <div class="form-group">
-                            <label for="document_root" class="control-label" readonly>{tmpl_var name='document_root_txt'}</label>
-                            <div class="col-sm-9">
-                                <div class="checkbox">{tmpl_var name='document_root'}</div>
+                                    <input type="hidden" name="server_id" value="{tmpl_var name='server_id_value'}" />
+                                    <tmpl_else>
+                                        <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+                                        <select name="server_id" id="server_id" class="form-control">
+                                            {tmpl_var name='server_id'}
+                                        </select>
+                                </tmpl_if>
                             </div>
                         </div>
-                    </tmpl_if>
-                </div>
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label for="subdomain" class="control-label">{tmpl_var name='subdomain_txt'}</label>
-                        <select name="subdomain" id="subdomain" class="form-control">
-                            {tmpl_var name='subdomain'}
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <tmpl_if name="limit_directive_snippets" op="==" value="y">
-                        <div class="form-group">
-                            <label for="directive_snippets_id" class="control-label">{tmpl_var name='directive_snippets_id_txt'}</label>
-                            <select name="directive_snippets_id" id="directive_snippets_id" class="form-control">
-                                {tmpl_var name='directive_snippets_id'}
-                            </select>
-                        </div>
-                    </tmpl_if>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label for="hd_quota">{tmpl_var name='hd_quota_txt'}</label>
-                        <div class="input-group mb-2">
-                            <input type="text" name="hd_quota" id="hd_quota" value="{tmpl_var name='hd_quota'}" class="form-control" />
-                            <div class="input-group-append">
-                                <div class="input-group-text">MB</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </tmpl_if>
-
-            <tmpl_if name="vhostdomain_type" value="subdomain">
-                <input type="hidden" name="server_id" id="server_id" value="{tmpl_var name='server_id_value'}" />
 
 
-                <tmpl_if name="domain_option">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
-                            <div class="col-sm-9"><select id="parent_domain_id" name="parent_domain_id" class="form-control">{tmpl_var name='parent_domain_id'}</select></div>
-                        </div>
-                    </div>
+
                 </tmpl_if>
-                <div class="col-md-6">
+        </tmpl_if>
+
+        <tmpl_if name="is_reseller">
+            <div class="col-md-3">
+                <tmpl_unless name="domain_option">
                     <div class="form-group">
-                        <label for="domain" class="control-label">{tmpl_var name='host_txt'}</label>
-                        <div class="col-sm-9"><input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" /></div>
+                        <label for="client_group_id" class="control-label">{tmpl_var name='client_group_id_txt'}</label>
+                        <select name="client_group_id" id="client_group_id" class="form-control">
+                            {tmpl_var name='client_group_id'}
+                        </select>
                     </div>
-                </div>
-                <tmpl_if name="domain_option">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="sel_domain" class="control-label">{tmpl_var name='domain_txt'}</label>
-                            <div class="col-sm-9"><select name="sel_domain" id="sel_domain" class="form-control">
-                                    {tmpl_var name='domain_option'}
-                                </select></div>
-                        </div>
-                        <tmpl_else>
-                            <div class="form-group">
-                                <label for="parent_domain_id" class="control-label">{tmpl_var name='domain_txt'}</label>
-                                <div class="col-sm-9"><select id="parent_domain_id" name="parent_domain_id" class="form-control">{tmpl_var name='parent_domain_id'}</select></div>
-                            </div>
-                    </div>
-                </tmpl_if>
-        </div>
+                </tmpl_unless>
+            </div>
+        </tmpl_if>
+</div>
+<div class="row">
+    <div class="col-md-3">
         <div class="form-group">
-            <label for="web_folder" class="control-label">{tmpl_var name='web_folder_txt'}</label>
-            <div class="col-sm-9"><input type="text" name="web_folder" id="web_folder" value="{tmpl_var name='web_folder'}" class="form-control" <tmpl_if name='fixed_folder' op='==' value='y'>readonly="readonly"
-                </tmpl_if> />
+            <label for="domain" class="control-label">{tmpl_var name='domain_txt'}</label>
+            <tmpl_if name="domain_option">
+                <select name="domain" id="domain" class="form-control">
+                    {tmpl_var name='domain_option'}
+                </select>
+                <tmpl_else>
+                    <input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" />
+            </tmpl_if>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="ip_address" class="control-label">{tmpl_var name='ip_address_txt'}</label>
+            <select name="ip_address" id="ip_address" class="form-control">
+                {tmpl_var name='ip_address'}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="ipv6_address" class="control-label">{tmpl_var name='ipv6_address_txt'}</label>
+            <select name="ipv6_address" id="ipv6_address" class="form-control">
+                {tmpl_var name='ipv6_address'}
+            </select>
+        </div>
+        <tmpl_if name="web_aliasdomains_info">
+            <div class="form-group">
+                <label for="web_aliasdomains" class="control-label">{tmpl_var name='dependent_domains_txt'}</label>
+                <textarea name="web_aliasdomains" id="web_aliasdomains" class="form-control" disabled="disabled"><tmpl_loop name="web_aliasdomains_info">{tmpl_var name='domain'}
+      </tmpl_loop></textarea>
+
+        </tmpl_if>
+    </div>
+
+    <tmpl_if name="edit_disabled">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="document_root" class="control-label" readonly>{tmpl_var name='document_root_txt'}</label>
+                <div class="col-sm-9">
+                    <div class="checkbox">{tmpl_var name='document_root'}</div>
+                </div>
             </div>
         </div>
-        </tmpl_if>
-        <tmpl_if name="vhostdomain_type" value="aliasdomain">
-            <input type="hidden" name="server_id" id="server_id" value="{tmpl_var name='server_id_value'}" />
+    </tmpl_if>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="subdomain" class="control-label">{tmpl_var name='subdomain_txt'}</label>
+            <select name="subdomain" id="subdomain" class="form-control">
+                {tmpl_var name='subdomain'}
+            </select>
+        </div>
+    </div>
+
+
+    <tmpl_if name="limit_directive_snippets" op="==" value="y">
+        <div class="col-md-2">
             <div class="form-group">
-                <label for="domain" class="control-label">{tmpl_var name='domain_txt'}</label>
-                <tmpl_if name="domain_option">
-                    <div class="col-sm-9"><select name="domain" id="domain" class="form-control">
+                <label for="directive_snippets_id" class="control-label">{tmpl_var name='directive_snippets_id_txt'}</label>
+                <select name="directive_snippets_id" id="directive_snippets_id" class="form-control">
+                    {tmpl_var name='directive_snippets_id'}
+                </select>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="hd_quota">{tmpl_var name='hd_quota_txt'}</label>
+            <div class="input-group mb-2">
+                <input type="text" name="hd_quota" id="hd_quota" value="{tmpl_var name='hd_quota'}" class="form-control" />
+                <div class="input-group-append">
+                    <div class="input-group-text">MB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </tmpl_if>
+
+    <tmpl_if name="vhostdomain_type" value="subdomain">
+        <input type="hidden" name="server_id" id="server_id" value="{tmpl_var name='server_id_value'}" />
+
+
+        <tmpl_if name="domain_option">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
+                    <div class="col-sm-9"><select id="parent_domain_id" name="parent_domain_id" class="form-control">{tmpl_var name='parent_domain_id'}</select></div>
+                </div>
+            </div>
+        </tmpl_if>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="domain" class="control-label">{tmpl_var name='host_txt'}</label>
+                <div class="col-sm-9"><input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" /></div>
+            </div>
+        </div>
+        <tmpl_if name="domain_option">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="sel_domain" class="control-label">{tmpl_var name='domain_txt'}</label>
+                    <div class="col-sm-9"><select name="sel_domain" id="sel_domain" class="form-control">
                             {tmpl_var name='domain_option'}
                         </select></div>
-                    <tmpl_else>
-                        <div class="col-sm-9"><input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" /></div>
-                </tmpl_if>
+                </div>
+                <tmpl_else>
+                    <div class="form-group">
+                        <label for="parent_domain_id" class="control-label">{tmpl_var name='domain_txt'}</label>
+                        <div class="col-sm-9"><select id="parent_domain_id" name="parent_domain_id" class="form-control">{tmpl_var name='parent_domain_id'}</select></div>
+                    </div>
             </div>
-            <div class="form-group">
-                <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
-                <div class="col-sm-9"><select name="parent_domain_id" id="parent_domain_id" class="form-control">
-                        {tmpl_var name='parent_domain_id'}
-                    </select></div>
-            </div>
-            <div class="form-group">
-                <label for="web_folder" class="control-label">{tmpl_var name='web_folder_txt'}</label>
-                <div class="col-sm-9"><input type="text" name="web_folder" id="web_folder" value="{tmpl_var name='web_folder'}" class="form-control" <tmpl_if name='fixed_folder' op='==' value='y'> readonly="readonly"
+        </tmpl_if>
+</div>
+<div class="form-group">
+    <label for="web_folder" class="control-label">{tmpl_var name='web_folder_txt'}</label>
+    <div class="col-sm-9"><input type="text" name="web_folder" id="web_folder" value="{tmpl_var name='web_folder'}" class="form-control" <tmpl_if name='fixed_folder' op='==' value='y'>readonly="readonly"
         </tmpl_if> />
     </div>
+</div>
+</tmpl_if>
+<tmpl_if name="vhostdomain_type" value="aliasdomain">
+    <input type="hidden" name="server_id" id="server_id" value="{tmpl_var name='server_id_value'}" />
+    <div class="form-group">
+        <label for="domain" class="control-label">{tmpl_var name='domain_txt'}</label>
+        <tmpl_if name="domain_option">
+            <div class="col-sm-9"><select name="domain" id="domain" class="form-control">
+                    {tmpl_var name='domain_option'}
+                </select></div>
+            <tmpl_else>
+                <div class="col-sm-9"><input type="text" name="domain" id="domain" value="{tmpl_var name='domain'}" class="form-control" /></div>
+        </tmpl_if>
+    </div>
+    <div class="form-group">
+        <label for="parent_domain_id" class="control-label">{tmpl_var name='parent_domain_id_txt'}</label>
+        <div class="col-sm-9"><select name="parent_domain_id" id="parent_domain_id" class="form-control">
+                {tmpl_var name='parent_domain_id'}
+            </select></div>
+    </div>
+    <div class="form-group">
+        <label for="web_folder" class="control-label">{tmpl_var name='web_folder_txt'}</label>
+        <div class="col-sm-9"><input type="text" name="web_folder" id="web_folder" value="{tmpl_var name='web_folder'}" class="form-control" <tmpl_if name='fixed_folder' op='==' value='y'> readonly="readonly"
+</tmpl_if> />
 </div>
 </tmpl_if>
 
@@ -232,7 +248,7 @@
 </div>
 <div class="row">
 
-    <div class="col-md-10 row">
+    <div class="col-md-9 row" style="padding-left: 0;">
 
         <tmpl_if name="limit_cgi" op="==" value="y">
             <div class="col-md-2" style="padding-top: 35px;">

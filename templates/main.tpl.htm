@@ -8,66 +8,70 @@
         <tmpl_var name="company_name">
             <tmpl_var name="app_title">
     </title>
-
     <meta name='viewport' content='width=device-width, user-scalable=yes'>
     <meta name='description' lang='en' content='' />
     <meta name='keywords' lang='en' content='' />
     <meta name='robots' content='index, follow' />
-
-    <!-- Theme style -->
-
     <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/firecups.css">
     <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/bootstrap-datetimepicker.min.css" />
     <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/pushy.min.css" />
-    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/fonts.min.css">
-    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/glyphicon.min.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/fonts.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/glyphicon.css">
     <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/icomoon.min.css">
-    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/site.min.css">
+    <link rel="stylesheet" href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/site.css">
     <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/select2.css" />
     <link rel='stylesheet' href="themes/<tmpl_var name='current_theme'>/assets/firecups/css/select2-custom.css" />
 
 </head>
 
-<div class="page">
+<div class="page" class="content" id="content">
     <div class="page-main">
-        <div class="header py-4">
-            <div class="container">
-                <div class="d-flex">
-                    <a class="header-brand" href="/">
-                        <img src="{tmpl_var name=" base64_logo_txt"}" class="header-brand-img" alt="tabler logo">
-                    </a>
-                    <div class="d-flex order-lg-2 ml-auto">
-                        <div class="dropdown">
-                            <tmpl_if name="cpuser">
-                                <button type="button" id="logout-button" class="btn btn-sm btn-danger text-uppercase" data-load-content="login/logout.php">Logout admin</button>
+        <tmpl_if name='logged_in' value='y'>
+            <div class="header py-4">
+                <div class="container">
+                    <div class="d-flex">
+                        <a class="header-brand" href="/">
+                            <img src="{tmpl_var name=" base64_logo_txt"}" class="header-brand-img" alt="tabler logo">
+                        </a>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="dropdown">
+                                <tmpl_if name="cpuser">
+                                    <button type="button" id="logout-button" class="btn btn-sm btn-danger text-uppercase" data-load-content="login/logout.php">
+                                        <tmpl_var name="logout_txt">
+                                    </button>
+                                </tmpl_if>
+                            </div>
+                        </div>
+                        <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                            <span class="header-toggler-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </tmpl_if>
+
+        <tmpl_if name='logged_in' value='y'>
+            <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 ml-auto">
+                            <tmpl_if name='usertype' op='==' value='normaluser'>
+                                <form action='#' method='get' id='searchform' class="input-icon my-3 my-lg-0">
+                                    <input type="search" class="form-control header-search" placeholder="..." tabindex="1" id="globalsearch">
+                                    <div class="input-icon-addon">
+                                        <i class="fe fe-search"></i>
+                                    </div>
+                                </form>
                             </tmpl_if>
                         </div>
-                    </div>
-                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
-                        <span class="header-toggler-icon"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 ml-auto">
-                        <form action='#' method='get' id='searchform' class="input-icon my-3 my-lg-0">
-                            <input type="search" class="form-control header-search" placeholder="..." tabindex="1" id="globalsearch">
-                            <div class="input-icon-addon">
-                                <i class="fe fe-search"></i>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg order-lg-first">
-                        <ul class="nav-tabs border-0 flex-column flex-lg-row" id='topnav-container'>
-                        </ul>
+                        <div class="col-lg order-lg-first">
+                            <ul class="nav-tabs border-0 flex-column flex-lg-row" id='topnav-container'>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </tmpl_if>
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">

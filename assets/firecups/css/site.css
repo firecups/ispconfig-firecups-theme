@@ -35,24 +35,18 @@
     padding: 0 !important;
 }
 
-
-/*.form-control,
-.dataTables_wrapper .dataTables_length select,
-.dataTables_wrapper .dataTables_filter input {
-    display: block;
-    width: 100%;
-    height: 2.375rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.9375rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 40, 100, 0.12);
-    border-radius: 3px;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}*/
+#ajaxloader {
+    position: absolute;
+    width: 325px;
+    height: 150px;
+    background: #ffffff url('../images/ajax-loader.gif') no-repeat center center;
+    border: solid 2px #e1e1e1;
+    border-radius: 10px;
+    /*background: rgba(255, 255, 255, 0.85);*/
+    padding: 20px;
+    text-align: center;
+    z-index: 100;
+}
 
 
 .formbutton-default {
@@ -263,4 +257,22 @@ thead td select.form-control {
 
 .input-group-text {
     background-color: #f1f1f1;
+}
+
+.df-cheader {
+    display: inline-table;
+}
+
+.df-cheader-title {
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+.df-cdata {
+    display: inline-table;
+    font-weight: 500;
+}
+
+.df-resultbox {
+    border: 1px solid #e4e4e4;
 }
