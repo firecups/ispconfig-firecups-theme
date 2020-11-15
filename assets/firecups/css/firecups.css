@@ -10,7 +10,7 @@ Dashboard UI
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #467fcf;
+  --blue: #1c4379;
   --indigo: #6574cd;
   --purple: #a55eea;
   --purple-hover: #8c31e4;
@@ -2027,8 +2027,8 @@ tbody tr {
 .table .thead-dark th,
 .text-wrap table .thead-dark th {
   color: #f5f7fb;
-  background-color: var(--darker);
-  border-color: var(--dark);
+  background-color: var(--blue);
+  border-color: var(--blue);
 }
 
 .table .thead-light th,
@@ -11474,6 +11474,10 @@ body.fixed-header .page {
   border-bottom: 1px solid rgba(0, 40, 100, 0.12);
 }
 
+#headerMenuCollapse {
+  background: #1c4379
+}
+
 body.fixed-header .header {
   position: fixed;
   top: 0;
@@ -12927,7 +12931,7 @@ a.icon:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: var(--dark);
+  color: var(--white);
   margin: 0 -.75rem;
   padding-left: 5px;
 }
@@ -12943,13 +12947,13 @@ a.icon:hover {
 }
 
 .nav-tabs .nav-link:hover:not(.disabled) {
-  border-color: #6e7687;
-  color: #6e7687;
+  border-color: #d6d6d6;
+  color: #d6d6d6;
 }
 
 .nav-tabs .nav-link.active {
-  border-color: var(--darker);
-  color: var(--darker);
+  border-color: var(--white);
+  color: var(--white);
   background: transparent;
 }
 
@@ -18041,9 +18045,9 @@ span.flag-zw {
 
 
 .content-tabs .nav-link.active {
-  border-color: var(--darker);
-  color: var(--darker);
-  background: var(--primary);
+  border-color: var(--blue);
+  color: var(--white);
+  background: var(--blue);
   padding: 16px 20px 16px 20px;
 }
 
