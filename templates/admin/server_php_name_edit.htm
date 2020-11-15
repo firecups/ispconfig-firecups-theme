@@ -1,29 +1,37 @@
-<div class="form-group">
-    <label for="server_id" class="col-sm-3 control-label">{tmpl_var name='server_id_txt'}</label>
-    <div class="col-sm-9"><select name="server_id" id="server_id" class="form-control">
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="server_id" class="control-label">{tmpl_var name='server_id_txt'}</label>
+        <select name="server_id" id="server_id" class="form-control">
             {tmpl_var name='server_id'}
-        </select></div>
-</div>
-<div class="form-group">
-    <label for="client_id" class="col-sm-3 control-label">{tmpl_var name='client_id_txt'}</label>
-    <div class="col-sm-9"><select name="client_id" id="client_id" class="form-control">
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="client_id" class="control-label">{tmpl_var name='client_id_txt'}</label>
+        <select name="client_id" id="client_id" class="form-control">
             {tmpl_var name='client_id'}
-        </select></div>
+        </select>
+    </div>
 </div>
-<div class="form-group">
-    <label for="name" class="col-sm-3 control-label">{tmpl_var name='name_txt'}</label>
-    <div class="col-sm-9"><input type="text" name="name" id="name" value="{tmpl_var name='name'}" class="form-control" /></div>
+<div class="row">
+    <div class="form-group col-md-3">
+        <label for="name" class="control-label">{tmpl_var name='name_txt'}</label>
+        <input type="text" name="name" id="name" value="{tmpl_var name='name'}" class="form-control" />
+    </div>
 </div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='active_txt'}</label>
-    <div class="col-sm-9">{tmpl_var name='active'}</div>
+<div class="row">
+    <div class="form-group col-md-3">
+        {tmpl_var name='active'}
+        <label class="control-label">{tmpl_var name='active_txt'}</label>
+    </div>
 </div>
 
-<input type="hidden" name="id" value="{tmpl_var name='id'}">
 
-<div class="clear">
-    <div class="right">
-        <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/server_php_edit.php">{tmpl_var name='btn_save_txt'}</button>
-        <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_php_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/server_php_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_php_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
     </div>
 </div>

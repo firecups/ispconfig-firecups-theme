@@ -1,84 +1,99 @@
-<div class="form-group">
-    <label for="username" class="col-sm-3 control-label">{tmpl_var name='username_txt'}</label>
-    <div class="col-sm-9"><input type="text" name="username" id="username" value="{tmpl_var name='username'}" class="form-control" /></div>
-</div>
-<div class="form-group">
-    <label for="passwort" class="col-sm-3 control-label">{tmpl_var name='password_txt'}</label>
-    <div class="col-sm-9">
-        <div class="input-group">
-            <input type="password" name="passwort" id="passwort" value="{tmpl_var name='passwort'}" title="{tmpl_var name='password_click_to_set_txt'}" class="form-control" autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('passwort','repeat_password');" />
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button" onclick="generatePassword('passwort','repeat_password');">{tmpl_var name='generate_password_txt'}</button>
-            </span>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="username" class="control-label">{tmpl_var name='username_txt'}</label>
+            <input type="text" name="username" id="username" value="{tmpl_var name='username'}" class="form-control" />
         </div>
     </div>
 </div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='password_strength_txt'}</label>
-    <div class="col-sm-9 checkbox">
-        <div id="passBar"></div>
-        <span id="passText">&nbsp;</span>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="password" class="control-label">{tmpl_var name='password_txt'}</label>
+            <div class="input-group">
+                <input type="password" name="password" id="password" value="{tmpl_var name='password'}" title="{tmpl_var name='password_click_to_set_txt'}" class="form-control" autocomplete="off" onkeyup="pass_check(this.value);checkPassMatch('password','repeat_password');" />
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" onclick="generatePassword('password','repeat_password');">{tmpl_var name='generate_password_txt'}</button>
+                </span>
+            </div>
+            <label class="col-sm-12 control-label">{tmpl_var name='password_strength_txt'}</label>
+            <div class="checkbox">
+                <div id="passBar"></div>
+                <span id="passText">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="repeat_password" class="col-sm-12 control-label">{tmpl_var name='repeat_password_txt'}</label>
+            <div class="col-sm-12"><input type="password" name="repeat_password" id="repeat_password" value="" class="form-control" autocomplete="off" onkeyup="checkPassMatch('passwort','repeat_password');" /></div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-12">
+                <div id="confirmpasswordError" style="display:none;" class="confirmpassworderror">{tmpl_var name='password_mismatch_txt'}</div>
+                <div id="confirmpasswordOK" style="display:none;" class="confirmpasswordok">{tmpl_var name='password_match_txt'}</div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="form-group">
-    <label for="repeat_password" class="col-sm-3 control-label">{tmpl_var name='repeat_password_txt'}</label>
-    <div class="col-sm-9"><input type="password" name="repeat_password" id="repeat_password" value="" class="form-control" autocomplete="off" onkeyup="checkPassMatch('passwort','repeat_password');" /></div>
-</div>
-<div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9">
-        <div id="confirmpasswordError" style="display:none;" class="confirmpassworderror">{tmpl_var name='password_mismatch_txt'}</div>
-        <div id="confirmpasswordOK" style="display:none;" class="confirmpasswordok">{tmpl_var name='password_match_txt'}</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label">{tmpl_var name='modules_txt'}</label><br />
+            {tmpl_var name='modules'}
+        </div>
+    </div>
+    <div class="row col-md-3">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="startmodule" class="control-label">{tmpl_var name='startmodule_txt'}</label>
+                <select name="startmodule" id="startmodule" class="form-control">
+                    {tmpl_var name='startmodule'}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="control-label">{tmpl_var name='app_theme_txt'}</label></br>
+                {tmpl_var name='app_theme'}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class=" control-label">{tmpl_var name='typ_txt'}</label></br>
+                {tmpl_var name='typ'}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="language" class="control-label">{tmpl_var name='language_txt'}</label>
+                <select name="language" id="language" class="form-control flags">
+                    {tmpl_var name='language'}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                {tmpl_var name='lost_password_function'}
+                <label class="control-label">{tmpl_var name='lost_password_function_txt'}</label>
+            </div>
+        </div>
     </div>
 </div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='modules_txt'}</label>
-    <div class="col-sm-9">
-        {tmpl_var name='modules'}
-    </div>
-</div>
-<div class="form-group">
-    <label for="startmodule" class="col-sm-3 control-label">{tmpl_var name='startmodule_txt'}</label>
-    <div class="col-sm-9"><select name="startmodule" id="startmodule" class="form-control">
-            {tmpl_var name='startmodule'}
-        </select></div>
-</div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='app_theme_txt'}</label>
-    <div class="col-sm-9">
-        {tmpl_var name='app_theme'}
-    </div>
-</div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='typ_txt'}</label>
-    <div class="col-sm-9">
-        {tmpl_var name='typ'}
-    </div>
-</div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='active_txt'}</label>
-    <div class="col-sm-9">
+<div class="col-md-6">
+    <div class="form-group">
         {tmpl_var name='active'}
-    </div>
-</div>
-<div class="form-group">
-    <label for="language" class="col-sm-3 control-label">{tmpl_var name='language_txt'}</label>
-    <div class="col-sm-9"><select name="language" id="language" class="form-control flags">
-            {tmpl_var name='language'}
-        </select></div>
-</div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='lost_password_function_txt'}</label>
-    <div class="col-sm-9">
-        {tmpl_var name='lost_password_function'}
+        <label class="control-label">{tmpl_var name='active_txt'}</label>
     </div>
 </div>
 
-
-<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-<div class="clear">
-    <div class="right">
-        <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/users_edit.php">{tmpl_var name='btn_save_txt'}</button>
-        <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/users_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/users_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/users_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
     </div>
 </div>

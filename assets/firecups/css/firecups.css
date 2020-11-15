@@ -313,6 +313,7 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
+  margin-right: 5px;
 }
 
 input[type="date"],
@@ -18334,4 +18335,31 @@ z-index: 100;
     bottom: 0;
     opacity: 1
   }
+}
+
+.gs-resultbox {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #eceaea;
+  width: 100%;
+  z-index: 99;
+}
+
+.gs-cheader {
+  list-style: none;
+  margin-left: -15px;
+}
+
+.gs-cheader-title {
+  font-weight: bold;
+  margin-bottom: .2em;
+
+}
+
+.gs-cheader-limit {
+  font-weight: bold;
+}
+
+.pageForm_description {
+  display: none;
 }

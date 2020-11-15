@@ -10,19 +10,20 @@
 		<tmpl_var name="list_desc_txt">
 	</p>
 </tmpl_if>
-
-<div class="form-group">
-	<label for="default_dnsserver" class="col-sm-3 control-label">{tmpl_var name='default_dnsserver_txt'}</label>
-	<div class="col-sm-9"><select name="default_dnsserver" id="default_dnsserver" class="form-control">
+<div class="row">
+	<div class="form-group col-md-3">
+		<label for="default_dnsserver" class="control-label">{tmpl_var name='default_dnsserver_txt'}</label>
+		<select name="default_dnsserver" id="default_dnsserver" class="form-control">
 			{tmpl_var name='default_dnsserver'}
-		</select></div>
+		</select>
+	</div>
 </div>
-
-<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-<div class="clear">
-	<div class="right">
-		<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/system_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
-		<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/users_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+<div class="row">
+	<div class="col-md-3">
+		<input type="hidden" name="id" value="{tmpl_var name='id'}">
+		<div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+			<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/system_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
+			<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/users_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+		</div>
 	</div>
 </div>

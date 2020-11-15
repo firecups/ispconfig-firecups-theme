@@ -1,54 +1,58 @@
-<div class="alert alert-info">
-    <h4 style="text-align:center">
-        <tmpl_var name="config_for_txt"> {tmpl_var name='server_name'}
-    </h4>
-</div>
+<tmpl_if name="server_name">
+    <div class="alert alert-info">
+        <h4 style="text-align:center">
+            <tmpl_var name="config_for_txt"> {tmpl_var name='server_name'}
+        </h4>
+    </div>
+</tmpl_if>
 
-
-<legend>Rescue</legend>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='try_rescue_txt'}</label>
-    <div class="col-sm-9">
+<div class="row">
+    <div class="form-group col-md-6">
         {tmpl_var name='try_rescue'}
+        <label class="control-label">{tmpl_var name='try_rescue_txt'}</label>
     </div>
 </div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='do_not_try_rescue_httpd_txt'}</label>
-    <div class="col-sm-9">
+<div class="row">
+    <div class="form-group col-md-6">
         {tmpl_var name='do_not_try_rescue_httpd'}
+        <label class="control-label">{tmpl_var name='do_not_try_rescue_httpd_txt'}</label>
     </div>
 </div>
+
 <!--
             <div class="form-group">
-                <label class="col-sm-3 control-label">{tmpl_var name='do_not_try_rescue_mongodb_txt'}</label>
+                <label class="control-label">{tmpl_var name='do_not_try_rescue_mongodb_txt'}</label>
                 <div class="col-sm-9">
                     {tmpl_var name='do_not_try_rescue_mongodb'}
                 </div>
             </div>
 -->
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='do_not_try_rescue_mysql_txt'}</label>
-    <div class="col-sm-9">
+<div class="row">
+    <div class="form-group col-md-6">
         {tmpl_var name='do_not_try_rescue_mysql'}
+        <label class="control-label">{tmpl_var name='do_not_try_rescue_mysql_txt'}</label>
     </div>
 </div>
-<div class="form-group">
-    <label class="col-sm-3 control-label">{tmpl_var name='do_not_try_rescue_mail_txt'}</label>
-    <div class="col-sm-9">
+<div class="row">
+    <div class="form-group col-md-6">
         {tmpl_var name='do_not_try_rescue_mail'}
+        <label class="control-label">{tmpl_var name='do_not_try_rescue_mail_txt'}</label>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <div class="alert alert-warning">
+            <tmpl_var name="rescue_description_txt">
+        </div>
     </div>
 </div>
 
-
-<div class="alert alert-warning">
-    <tmpl_var name="rescue_description_txt">
-</div>
-
-<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-<div class="clear">
-    <div class="right">
-        <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/server_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
-        <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_config_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" name="id" value="{tmpl_var name='id'}">
+        <div class="float-right" style="padding-top: 1rem; padding-bottom: 1rem;">
+            <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/server_config_edit.php">{tmpl_var name='btn_save_txt'}</button>
+            <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/server_config_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+        </div>
     </div>
 </div>

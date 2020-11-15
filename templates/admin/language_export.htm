@@ -1,20 +1,20 @@
 <div class='page-header'>
-	<h1>
+	<h1 class="page-title">
 		<tmpl_var name="list_head_txt">
 	</h1>
 </div>
-<p>
-	<tmpl_var name="list_desc_txt">
-</p>
 
-<div class="panel panel_language_import" style="padding:20px;">
-	<div class="pnl_formsarea">
-		<div class="form-group">
-			<label for="lng_select" class="col-sm-3 control-label">{tmpl_var name='language_select_txt'}</label>
-			<div class="col-sm-9"><select name="lng_select" id="lng_select" class="form-control flags">
-					{tmpl_var name='language_option'}
-				</select></div>
-		</div>
+
+<div class="row row-cards row-deck">
+	<div class="card">
+
+		<tmpl_if name="list_desc_txt">
+			<p>
+				<tmpl_var name="list_desc_txt">
+			</p>
+		</tmpl_if>
+
+
 		<tmpl_if name="msg">
 			<div id="OKMsg">
 				<p>
@@ -23,13 +23,24 @@
 			</div>
 		</tmpl_if>
 
-		<input type="hidden" name="id" value="{tmpl_var name='id'}">
-
-		<div class="clear">
-			<div class="right">
-				<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/language_export.php">{tmpl_var name='btn_save_txt'}</button>
-				<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/language_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+		<div class="row">
+			<div class="form-group col-md-3">
+				<label for="lng_select" class="control-label">{tmpl_var name='language_select_txt'}</label>
+				<select name="lng_select" id="lng_select" class="form-control flags">
+					{tmpl_var name='language_option'}
+				</select>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<input type="hidden" name="id" value="{tmpl_var name='id'}">
+				<div style="padding-top: 1rem; padding-bottom: 1rem;">
+					<button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="admin/language_export.php">{tmpl_var name='btn_save_txt'}</button>
+					<button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="admin/language_list.php">{tmpl_var name='btn_cancel_txt'}</button>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
