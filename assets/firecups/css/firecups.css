@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@import url("dark.css");
+@import url("blue.css");
+@import url("red.css");
+@import url("green.css");
 
 /**
 Dashboard UI
@@ -68,103 +72,6 @@ Dashboard UI
   --global-pagination-text-color: var(--white);
   --global-pagination-bg-color: #325675
 }
-
-html[data-theme='dark'] {
-  --success: #1c3309;
-  --success-hover: #345519;
-  --danger: #9e1716;
-  --danger-hover: #581312;
-  --global-bg-color: var(--darker);
-  --global-text-color: var(--white);
-  --global-nav-tabs-color: var(--gray-ldark);
-  --global-nav-tabs-border: var(--gray-ldark);
-  --global-topnav-bg-color: #ffffff;
-  --global-topnav-text-color: var(--darker);
-  --global-topnav-bg-color-hover: var(--gray-ldark);
-  --global-topnav-text-color-hover: var(--gray-ldark);
-  --global-topnav-bg-color-active: var(--darker);
-  --global-topnav-text-color-active: var(--darker);
-  --global-table-bg-head-color: var(--darker);
-  --global-table-bg-head-border-color: var(--dark);
-  --global-table-text-head-color: var(--white);
-  --global-label-text-color: var(--darker);
-  --global-footer-top-border: var(--dark);
-  --global-pagination-text-color: var(--white);
-  --global-pagination-bg-color: var(--dark);
-}
-
-html[data-theme='blue'] {
-  --success: #1c447b;
-  --success-hover: #285592;
-  --danger: #cd201f;
-  --danger-hover: #a11918;
-  --global-bg-color: var(--white);
-  --global-text-color: var(--darker);
-  --global-nav-tabs-color: var(--gray-ldark);
-  --global-nav-tabs-border: var(--gray-ldark);
-  --global-topnav-bg-color: #36619c;
-  --global-topnav-text-color: var(--white);
-  --global-topnav-bg-color-hover: var(--light);
-  --global-topnav-text-color-hover: var(--light);
-  --global-topnav-bg-color-active: var(--light);
-  --global-topnav-text-color-active: var(--light);
-  --global-table-bg-head-color: #36619c;
-  --global-table-bg-head-border-color: #36619c;
-  --global-table-text-head-color: var(--light);
-  --global-label-text-color: var(--darker);
-  --global-footer-top-border: var(--light-gray);
-  --global-pagination-text-color: var(--white);
-  --global-pagination-bg-color: #325675
-}
-
-html[data-theme='red'] {
-  --success: #449600;
-  --success-hover: #467b19;
-  --danger: #cd201f;
-  --danger-hover: #a11918;
-  --global-bg-color: var(--white);
-  --global-text-color: var(--darker);
-  --global-nav-tabs-color: var(--gray-ldark);
-  --global-nav-tabs-border: var(--gray-ldark);
-  --global-topnav-bg-color: #a11918;
-  --global-topnav-text-color: var(--white);
-  --global-topnav-bg-color-hover: var(--light);
-  --global-topnav-text-color-hover: var(--light);
-  --global-topnav-bg-color-active: var(--light);
-  --global-topnav-text-color-active: var(--light);
-  --global-table-bg-head-color: #a11918;
-  --global-table-bg-head-border-color: #a11918;
-  --global-table-text-head-color: var(--light);
-  --global-label-text-color: var(--darker);
-  --global-footer-top-border: var(--light-gray);
-  --global-pagination-text-color: var(--white);
-  --global-pagination-bg-color: #325675
-}
-
-html[data-theme='green'] {
-  --success: #449600;
-  --success-hover: #467b19;
-  --danger: #cd201f;
-  --danger-hover: #a11918;
-  --global-bg-color: var(--white);
-  --global-text-color: var(--darker);
-  --global-nav-tabs-color: var(--gray-ldark);
-  --global-nav-tabs-border: var(--gray-ldark);
-  --global-topnav-bg-color: #467b19;
-  --global-topnav-text-color: var(--white);
-  --global-topnav-bg-color-hover: var(--light);
-  --global-topnav-text-color-hover: var(--light);
-  --global-topnav-bg-color-active: var(--light);
-  --global-topnav-text-color-active: var(--light);
-  --global-table-bg-head-color: #467b19;
-  --global-table-bg-head-border-color: #467b19;
-  --global-table-text-head-color: var(--light);
-  --global-label-text-color: var(--gray-ldark);
-  --global-footer-top-border: var(--light-gray);
-  --global-pagination-text-color: var(--white);
-  --global-pagination-bg-color: #325675
-}
-
 
 *,
 *::before,

@@ -1,0 +1,23 @@
+html[data-theme='dark'] {
+    --success: #1c3309;
+    --success-hover: #345519;
+    --danger: #9e1716;
+    --danger-hover: #581312;
+    --global-bg-color: var(--darker);
+    --global-text-color: var(--white);
+    --global-nav-tabs-color: var(--gray-ldark);
+    --global-nav-tabs-border: var(--gray-ldark);
+    --global-topnav-bg-color: #ffffff;
+    --global-topnav-text-color: var(--darker);
+    --global-topnav-bg-color-hover: var(--gray-ldark);
+    --global-topnav-text-color-hover: var(--gray-ldark);
+    --global-topnav-bg-color-active: var(--darker);
+    --global-topnav-text-color-active: var(--darker);
+    --global-table-bg-head-color: var(--darker);
+    --global-table-bg-head-border-color: var(--dark);
+    --global-table-text-head-color: var(--white);
+    --global-label-text-color: var(--darker);
+    --global-footer-top-border: var(--dark);
+    --global-pagination-text-color: var(--white);
+    --global-pagination-bg-color: var(--dark);
+  }
