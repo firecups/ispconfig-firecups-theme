@@ -115,6 +115,8 @@ body {
   color: var(--global-text-color);
   text-align: left;
   background-color: var(--global-bg-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus {
