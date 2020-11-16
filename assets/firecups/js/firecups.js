@@ -143,7 +143,6 @@ function setNavigationIcons() {
 
     $('.list-group i').each(function (i, obj) {
         link = $(this).parent().data('load-content');
-        console.log(link);
         icon = getIcon(link);
         if (icon) {
             $(this).addClass(icon);
