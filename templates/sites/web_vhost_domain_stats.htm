@@ -1,4 +1,4 @@
-<div class="row">
+<div class="col-md-12 col-lg-6 row">
     <tmpl_if name="config_error_msg">
         <div class="alert alert-danger">
             <p>
@@ -10,7 +10,7 @@
             </p>
         </div>
     </tmpl_if>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label class="control-label">{tmpl_var name='stats_user_txt'}</label>
             <div class="checkbox">&nbsp; &nbsp;admin</div>
@@ -18,8 +18,8 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-3">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="stats_password" class="col-form-label">{tmpl_var name='stats_password_txt'}</label>
             <div class="input-group">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="repeat_password" class="col-form-label">{tmpl_var name='repeat_password_txt'}</label>
             <input type="password" name="repeat_password" id="repeat_password" value="" autocomplete="off" class="form-control" onkeyup="checkPassMatch('stats_password','repeat_password');" />
@@ -49,8 +49,8 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-5">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="stats_type" class="control-label">{tmpl_var name='stats_type_txt'}</label>
             <select name="stats_type" id="stats_type" class="form-control">
@@ -63,7 +63,7 @@
 <div class="row" style="padding: 10px;">
     <input type="hidden" name="id" value="{tmpl_var name='id'}">
 
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="float-right">
             <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/web_vhost_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
             <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/web_vhost_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>

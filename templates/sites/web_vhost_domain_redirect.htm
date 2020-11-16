@@ -1,4 +1,4 @@
-<div class="row">
+<div class="col-md-12 col-lg-6 row">
     <tmpl_if name="config_error_msg">
         <div class="alert alert-danger">
             <p>
@@ -10,7 +10,7 @@
             </p>
         </div>
     </tmpl_if>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="redirect_type" class="control-label">{tmpl_var name='redirect_type_txt'}</label>
             <select name="redirect_type" id="redirect_type" class="form-control">
@@ -18,7 +18,7 @@
             </select>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="redirect_path" class="control-label">{tmpl_var name='redirect_path_txt'}</label>
             <input type="text" name="redirect_path" id="redirect_path" value="{tmpl_var name='redirect_path'}" class="form-control" />
@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="seo_redirect" class="control-label">{tmpl_var name='seo_redirect_txt'}</label>
             <select name="seo_redirect" id="seo_redirect" class="form-control">
@@ -36,7 +36,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-3 nginx">
+    <div class="col-md-6 nginx">
         <div class="form-group nginx">
             <label for="rewrite_rules" class="control-label">{tmpl_var name='rewrite_rules_txt'}</label>
             <textarea class="form-control" name="rewrite_rules" id="rewrite_rules" rows='10' cols='50'>{tmpl_var name='rewrite_rules'}</textarea>
@@ -46,7 +46,7 @@
     <tmpl_if name="is_ssl_enabled" op="==" value="y">
 </div>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label class="control-label">{tmpl_var name='rewrite_to_https_txt'}</label>
             {tmpl_var name="rewrite_to_https"}
@@ -57,7 +57,7 @@
 <div class="row" style="padding: 10px;">
     <input type="hidden" name="id" value="{tmpl_var name='id'}">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="float-right">
             <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/web_vhost_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
             <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/web_vhost_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="col-md-12 col-lg-6 row">
     <tmpl_if name="config_error_msg">
         <div class="alert alert-danger">
             <p>
@@ -23,7 +23,7 @@
     </tmpl_if>
 
 
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="ssl_state" class="control-label">{tmpl_var name='ssl_state_txt'}</label>
             <input type="text" name="ssl_state" id="ssl_state" value="{tmpl_var name='ssl_state'}" class="form-control" />
@@ -37,7 +37,7 @@
             <input type="text" name="ssl_organisation" id="ssl_organisation" value="{tmpl_var name='ssl_organisation'}" class="form-control" />
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="form-group">
             <label for="ssl_organisation_unit" class="control-label">{tmpl_var name='ssl_organisation_unit_txt'}</label>
             <input type="text" name="ssl_organisation_unit" id="ssl_organisation_unit" value="{tmpl_var name='ssl_organisation_unit'}" class="form-control" />
@@ -56,40 +56,40 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="ssl_request" class="control-label">{tmpl_var name='ssl_key_txt'}</label>
             <textarea class="form-control" name="ssl_key" id="ssl_key" rows='10' cols='30'>{tmpl_var name='ssl_key'}</textarea>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="ssl_request" class="control-label">{tmpl_var name='ssl_request_txt'}</label>
             <textarea class="form-control" name="ssl_request" id="ssl_request" rows='10' cols='30'>{tmpl_var name='ssl_request'}</textarea>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="ssl_cert" class="control-label">{tmpl_var name='ssl_cert_txt'}</label>
             <textarea class="form-control" name="ssl_cert" id="ssl_cert" rows='10' cols='30'>{tmpl_var name='ssl_cert'}</textarea>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="ssl_bundle" class="control-label">{tmpl_var name='ssl_bundle_txt'}</label>
             <textarea class="form-control" name="ssl_bundle" id="ssl_bundle" rows='10' cols='30'>{tmpl_var name='ssl_bundle'}</textarea>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
+<div class="col-md-12 col-lg-6 row">
+    <div class="col-md-12">
         <div class="form-group">
             <label for="ssl_action" class="control-label">{tmpl_var name='ssl_action_txt'}</label>
             <select name="ssl_action" id="ssl_action" class="form-control">
@@ -99,10 +99,10 @@
     </div>
 </div>
 </div>
-<div class="row" style="padding: 10px;">
+<div class="col-md-12 col-lg-6 row" style="padding: 10px;">
     <input type="hidden" name="id" value="{tmpl_var name='id'}">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="float-right">
             <button class="btn btn-success" type="button" value="{tmpl_var name='btn_save_txt'}" data-submit-form="pageForm" data-form-action="sites/web_vhost_domain_edit.php">{tmpl_var name='btn_save_txt'}</button>
             <button class="btn btn-secondary" type="button" value="{tmpl_var name='btn_cancel_txt'}" data-load-content="sites/web_vhost_domain_list.php">{tmpl_var name='btn_cancel_txt'}</button>
