@@ -1,4 +1,4 @@
-# Theme for ISP Config based on Bootstrap 4.
+# Theme for ISP Config 3.2 based on Bootstrap 4.
 
 Changes beetwen the orgin and the firecups theme:
 
@@ -18,3 +18,20 @@ Switch the theme in the user settings.
 Open the file templates/main.tpl and add change the `<html lang="en">` agains `<html  lang='en' data-theme="COLOR-OPTION">`
 
 You can use dark, blue, red, green as option. Without changes, the theme use the default color scheme.
+
+## Screenshots
+
+### Default Theme
+![default 1](screenshots/default1.PNG)
+
+![default 2](screenshots/default2.PNG)
+
+### Dark Theme
+![dark 1](screenshots/dark1.PNG)
+
+![dark2](screenshots/dark2.PNG)
+
+### Green Theme
+![green 1](screenshots/green1.PNG)
+
+![green 2](screenshots/green2.PNG)
