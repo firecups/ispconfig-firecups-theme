@@ -79,7 +79,7 @@ html[data-theme='dark'] {
   --global-nav-tabs-color: var(--gray-ldark);
   --global-nav-tabs-border: var(--gray-ldark);
   --global-topnav-bg-color: #ffffff;
-  --global-topnav-text-color: var(--white);
+  --global-topnav-text-color: var(--darker);
   --global-topnav-bg-color-hover: var(--gray-ldark);
   --global-topnav-text-color-hover: var(--gray-ldark);
   --global-topnav-bg-color-active: var(--darker);
