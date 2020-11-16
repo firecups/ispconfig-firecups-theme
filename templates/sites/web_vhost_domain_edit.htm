@@ -364,10 +364,10 @@
 
     {tmpl_hook name="field_server_php_id"}
 
-    <div class="col-md-3">
+    <div class="col-md-3 server_php_id">
         <div class="form-group">
             <label for="php" class="col-form-label">{tmpl_var name='server_php_id_txt'}</label>
-            <select name="server_php_id" id="server_php_id" class="form-control">
+            <select name="server_php_id" id="server_php_id" class="server_php_id form-control">
                 {tmpl_var name='server_php_id'}
             </select>
             <tmpl_if name="server_php_id_default_hidden_warning_confirmed">
