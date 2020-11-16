@@ -1,4 +1,4 @@
-# Theme for ISP Config based on Bootstrap 4.
+# Theme for ISP Config 3.2 based on Bootstrap 4.
 
 Changes beetwen the orgin and the firecups theme:
 
