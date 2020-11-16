@@ -18414,3 +18414,7 @@ z-index: 100;
 a.addPlaceholder {
   color: var(--global-label-text-color);
 }
+
+#apache_directives, #nginx_directives, #proxy_directives, #custom_php_ini {
+	font-family: Consolas, "Courier New", Courier, monospace;
+}
