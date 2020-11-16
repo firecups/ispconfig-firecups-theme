@@ -62,7 +62,7 @@ Dashboard UI
   --global-topnav-text-color-active: var(--darker);
   --global-table-bg-head-color: var(--darker);
   --global-table-bg-head-border-color: var(--dark);
-  --global-table-text-head-color: var(--darker);
+  --global-table-text-head-color: var(--white);
   --global-label-text-color: var(--darker);
   --global-footer-top-border: var(--light-gray);
   --global-pagination-text-color: var(--white);
@@ -135,7 +135,7 @@ html[data-theme='red'] {
   --global-table-bg-head-color: #a11918;
   --global-table-bg-head-border-color: #a11918;
   --global-table-text-head-color: var(--light);
-  --global-label-text-color: var(--light);
+  --global-label-text-color: var(--darker);
   --global-footer-top-border: var(--light-gray);
   --global-pagination-text-color: var(--white);
   --global-pagination-bg-color: #325675
