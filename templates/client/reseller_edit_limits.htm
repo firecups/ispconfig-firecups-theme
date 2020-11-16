@@ -1,66 +1,65 @@
 <div class="main-content">
     <div class="panel panel_client" style="border: 0">
         <div class="pnl_formsarea">
-            <fieldset class="inlineLabels">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row" style="margin-left: -0.75rem;">
-                            <div class="form-group col-md-6">
-                                <label for="template_master" class="col-sm-12 control-label">{tmpl_var name='template_master_txt'}</label>
-                                <div class="col-sm-12"><select name="template_master" id="template_master" class="form-control chosen-select">
-                                        {tmpl_var name='template_master'}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="template_additional" class="col-sm-12 control-label">{tmpl_var name='template_additional_txt'}</label>
-                                <div class="col-sm-12"><select name="tpl_add_select" id="tpl_add_select" class="form-control chosen-select">
-                                        {tmpl_var name='tpl_add_select'}
-                                    </select>
-                                </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row" style="margin-left: -0.75rem;">
+                        <div class="form-group col-md-6">
+                            <label for="template_master" class="col-sm-12 control-label">{tmpl_var name='template_master_txt'}</label>
+                            <div class="col-sm-12"><select name="template_master" id="template_master" class="form-control chosen-select">
+                                    {tmpl_var name='template_master'}
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group" style="margin-left: 0.75rem;">
-                            <input type="button" value="{tmpl_var name='add_additional_template_txt'}" id="tpl_add_btn" class="btn btn-success" type="button" onclick="ISPConfig.addAdditionalTemplate();"><br />
-                            <label class="col-sm-12 control-label">{tmpl_var name='active_template_additional_txt'}</label>
-                            <div id="template_additional_list" class="col-sm-9 col-text">
-                                <ul>
-                                    {tmpl_var name='template_additional_list'}
-                                </ul>
+                        <div class="form-group col-md-6">
+                            <label for="template_additional" class="col-sm-12 control-label">{tmpl_var name='template_additional_txt'}</label>
+                            <div class="col-sm-12"><select name="tpl_add_select" id="tpl_add_select" class="form-control chosen-select">
+                                    {tmpl_var name='tpl_add_select'}
+                                </select>
                             </div>
-                            <input type="hidden" id="template_additional" name="template_additional" value="{tmpl_var name='template_additional'}">
                         </div>
                     </div>
+                    <div class="form-group" style="margin-left: 0.75rem;">
+                        <input type="button" value="{tmpl_var name='add_additional_template_txt'}" id="tpl_add_btn" class="btn btn-success" type="button" onclick="ISPConfig.addAdditionalTemplate();"><br />
+                        <label class="col-sm-12 control-label">{tmpl_var name='active_template_additional_txt'}</label>
+                        <div id="template_additional_list" class="col-sm-9 col-text">
+                            <ul>
+                                {tmpl_var name='template_additional_list'}
+                            </ul>
+                        </div>
+                        <input type="hidden" id="template_additional" name="template_additional" value="{tmpl_var name='template_additional'}">
+                    </div>
+                </div>
 
-                    <div class="col-md-6">
-                        <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="form-group row">
+                            <label for="customer_no_template" class="col-md-6 col-form-label">{tmpl_var name='customer_no_template_txt'}</label>
+                            <div class="col-md-6">
+                                <input type="text" name="customer_no_template" id="customer_no_template" value="{tmpl_var name='customer_no_template'}" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="form-group row">
-                                <label for="customer_no_template" class="col-md-6 col-form-label">{tmpl_var name='customer_no_template_txt'}</label>
-                                <div class="col-md-6">
-                                    <input type="text" name="customer_no_template" id="customer_no_template" value="{tmpl_var name='customer_no_template'}" class="form-control" />
+                                <label for="customer_no_start" class="col-md-9 col-form-label">{tmpl_var name='customer_no_start_txt'}</label>
+                                <div class="col-md-3">
+                                    <input type="text" name="customer_no_start" id="customer_no_start" value="{tmpl_var name='customer_no_start'}" class="form-control" />
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label for="customer_no_start" class="col-md-9 col-form-label">{tmpl_var name='customer_no_start_txt'}</label>
-                                    <div class="col-md-3">
-                                        <input type="text" name="customer_no_start" id="customer_no_start" value="{tmpl_var name='customer_no_start'}" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label for="limit_aps" class="col-md-9 col-form-label">{tmpl_var name='customer_no_counter_txt'}</label>
-                                    <div class="col-md-3">
-                                        <input type="text" name="customer_no_counter" id="customer_no_counter" value="{tmpl_var name='customer_no_counter'}" class="form-control" />
-                                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label for="limit_aps" class="col-md-9 col-form-label">{tmpl_var name='customer_no_counter_txt'}</label>
+                                <div class="col-md-3">
+                                    <input type="text" name="customer_no_counter" id="customer_no_counter" value="{tmpl_var name='customer_no_counter'}" class="form-control" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
