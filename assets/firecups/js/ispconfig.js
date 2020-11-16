@@ -187,7 +187,7 @@ var ISPConfig = {
 						ISPConfig.onAfterContentLoad(target, $('#' + formname).serialize());
 						ISPConfig.pageFormChanged = false;
 					}
-					clearTimeout(dataLogTimer);
+					clearTimeout(ISPConfig.dataLogTimer);
 					ISPConfig.dataLogNotification();
 					ISPConfig.hideLoadIndicator();
 				},
@@ -299,7 +299,7 @@ var ISPConfig = {
 					ISPConfig.onAfterContentLoad(pagename, (params ? params : null));
 					ISPConfig.pageFormChanged = false;
 				}
-				clearTimeout(dataLogTimer); // clear running dataLogTimer
+				clearTimeout(ISPConfig.dataLogTimer); // clear running dataLogTimer
 				ISPConfig.dataLogNotification();
 				ISPConfig.hideLoadIndicator();
 			},
@@ -558,9 +558,9 @@ var ISPConfig = {
 					$('.modal-body').html(dataLogItems.join(""));
 					$('.notification_text').text(data['count']);
 					$('.notification').css('display', '');
-					dataLogTimer = setTimeout(function () {
-						ISPConfig.dataLogNotification();
-					}, 2000);
+					ISPConfig.dataLogTimer = setTimeout( function() { 
+						ISPConfig.dataLogNotification(); 
+					}, 2000 );
 				} else {
 					$('.notification').css('display', 'none');
 					if (ISPConfig.bootboxOpen == 0) {
@@ -568,9 +568,9 @@ var ISPConfig = {
 					}
 					//$('.modal-body').not(".bootbox").html('');
 					$('#datalogModal').modal('hide');
-					dataLogTimer = setTimeout(function () {
-						ISPConfig.dataLogNotification();
-					}, 5000);
+					ISPConfig.dataLogTimer = setTimeout( function() { 
+						ISPConfig.dataLogNotification(); 
+					}, 5000 );
 				}
 			},
 			error: function () {
