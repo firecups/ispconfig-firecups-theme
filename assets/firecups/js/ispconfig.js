@@ -106,6 +106,9 @@ var ISPConfig = {
 	},
 
 	onAfterContentLoad: function (url, data) {
+
+		$('.tooltip').tooltip('hide');
+
 		if (!data) data = '';
 		else data = '&' + data;
 
